@@ -2,6 +2,8 @@
 
 Kickstart a huge project fast with code splitting!
 
+If you would like a simpler kickstart, see the [kickstart-simple project](https://github.com/thereactivestack/kickstart-simple).
+
 Clone this project to start a simple project using Meteor, React.js and Webpack.
 
 1. `git clone https://github.com/thereactivestack/kickstart-hugeapp.git`
@@ -13,7 +15,7 @@ When developing a huge application, you don't want to serve the entire JavaScrip
 
 Let's say you have a todo application and an admin panel. Do you really want to serve the admin pannel to your regular users? With code splitting, you don't need to. Look at [`client/AdminApp/index.js`](https://github.com/thereactivestack/kickstart-hugeapp/blob/master/client/AdminApp/index.js) code to see how it is working. You can copy / paste the same code to create new sections or sub-sections.
 
-The code that is common to multiple sections will be bundled into [`common.web.js`] and automatically loaded by react-router-ssr.
+The code that is common to multiple sections will be bundled into `common.web.js` and automatically loaded by react-router-ssr.
 
 ## The stack & features
 - Code splitting between parts of your application (dynamiclly loaded only once needed)
