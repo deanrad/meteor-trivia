@@ -13,7 +13,7 @@ Clone this project to start a simple project using Meteor, React.js and Webpack.
 ## Code splitting
 When developing a huge application, you don't want to serve the entire JavaScript to the client. You might want to wait before he actually need it. This is the problem code splitting is fixing.
 
-Let's say you have a todo application and an admin panel. Do you really want to serve the admin pannel to your regular users? With code splitting, you don't need to. Look at [`client/AdminApp/index.js`](https://github.com/thereactivestack/kickstart-hugeapp/blob/master/client/AdminApp/index.js) code to see how it is working. You can copy / paste the same code to create new sections or sub-sections.
+Let's say you have a todo application and an admin panel. Do you really want to serve the admin panel to your regular users? With code splitting, you don't need to. Look at [`client/AdminApp/index.js`](https://github.com/thereactivestack/kickstart-hugeapp/blob/master/client/AdminApp/index.js) code to see how it is working. You can copy / paste the same code to create new sections or sub-sections.
 
 The code that is common to multiple sections will be bundled into `common.web.js` and automatically loaded by react-router-ssr.
 
