@@ -22,4 +22,4 @@ export default {
       cb(null, require('./routes'));
     }
   }
-};;
+};

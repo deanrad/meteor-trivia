@@ -2,7 +2,7 @@ import ReactRouterSSR from 'react-router-ssr';
 
 ReactRouterSSR.Run({
   childRoutes: [
-    require('./TodoApp'),
-    require('./AdminApp')
+    require('TodoApp/client'),
+    require('AdminApp/client')
   ]
 });
