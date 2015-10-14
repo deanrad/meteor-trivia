@@ -10,6 +10,10 @@ Clone this project to start a simple project using Meteor, React.js and Webpack.
 1. `cd kickstart-hugeapp`
 1. `meteor`
 
+## Windows fix
+You have to remove the unix symbolic link node_modules and create a Windows symbolic link:
+`MKLINK /D node_modules packages\npm-container\.npm\package\node_modules`
+
 ## Code splitting
 When developing a huge application, you don't want to serve the entire JavaScript to the client. You might want to wait before he actually need it. This is the problem code splitting is fixing.
 
