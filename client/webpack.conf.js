@@ -20,19 +20,15 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 
+var plugins = [];
+
+if (process.env.NODE_ENV === 'production' && !Meteor.isCordova) {
+  plugins.push(new webpack.optimize.CommonsChunkPlugin('common', 'common.web.js'));
+}
+
 module.exports = {
   entry: './entry',
-  externals: {
-    // Add global variables you would like to import
-    'react': 'React',
-    'react-router': 'ReactRouter',
-    'react-router-ssr': 'ReactRouterSSR',
-    'react-meteor-data': 'ReactMeteorData',
-    'blaze-to-react': 'BlazeToReact'
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss']
-  },
+  plugins: plugins,
   module: {
     loaders: [
       { test: /\.jsx?$/, loader: 'babel', query: babelSettings, exclude: /node_modules/ },
