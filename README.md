@@ -11,8 +11,14 @@ Clone this project to start a simple project using Meteor, React.js and Webpack.
 1. `meteor`
 
 ## Windows fix
-You have to remove the unix symbolic link node_modules and create a Windows symbolic link:
-`MKLINK /D node_modules packages\npm-container\.npm\package\node_modules`
+You have to remove the unix symbolic link node_modules and create a Windows symbolic link.
+
+1. Install [this tool](http://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/) to easily create symbolic link on Windows
+1. Run meteor once so that the node_modules folder is created (it will fail)
+1. Set the `packages\npm-container\.npm\package\node_modules` as the source with right-click
+1. Remove the node_modules file in the root folder and drop the symbolic link and rename it `node_modules`
+    You can also use the command-line:
+    `MKLINK /D node_modules packages\npm-container\.npm\package\node_modules`
 
 ## Code splitting
 When developing a huge application, you don't want to serve the entire JavaScript to the client. You might want to wait before he actually need it. This is the problem code splitting is fixing.
