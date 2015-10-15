@@ -17,8 +17,9 @@ You have to remove the unix symbolic link node_modules and create a Windows symb
 1. Run meteor once so that the node_modules folder is created (it will fail)
 1. Set the `packages\npm-container\.npm\package\node_modules` folder as the source with right-click
 1. Remove the node_modules file in the root folder, drop the symbolic link and rename it `node_modules`
-    You can also use the command-line:
-    `MKLINK /D node_modules packages\npm-container\.npm\package\node_modules`
+
+You can also use the command-line:<br />
+`MKLINK /D node_modules packages\npm-container\.npm\package\node_modules`
 
 ## Code splitting
 When developing a huge application, you don't want to serve the entire JavaScript to the client. You might want to wait before he actually need it. This is the problem code splitting is fixing.
