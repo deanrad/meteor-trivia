@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router';
 import ReactMixin from 'react-mixin';
-import ReactMeteorData from 'react-meteor-data';
 
 import TodoHeader from './components/TodoHeader';
 import TodoList from './components/TodoList';
