@@ -16,7 +16,6 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 
 webpack:webpack
-meteorhacks:npm
 react-runtime
 react-meteor-data
 reactrouter:react-router-ssr
@@ -25,4 +24,3 @@ accounts-ui
 accounts-password
 
 
-npm-container
