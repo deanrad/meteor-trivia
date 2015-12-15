@@ -1,3 +1,4 @@
+import React from 'react';
 import TodoItem from 'TodoApp/client/components/TodoItem';
 import style from 'TodoApp/client/css/TodoApp.import.css';
 

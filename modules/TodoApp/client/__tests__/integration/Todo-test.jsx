@@ -1,3 +1,4 @@
+import React from 'react';
 import * as userHelpers from 'TestHelpers/client/user';
 import * as domHelpers from 'TestHelpers/client/dom';
 import style from 'TodoApp/client/css/TodoApp.import.css';

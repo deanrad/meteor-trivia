@@ -1,3 +1,4 @@
+import React from 'react';
 import TodoHeader from 'TodoApp/client/components/TodoHeader';
 
 const TestUtils = React.addons.TestUtils;
