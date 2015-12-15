@@ -1,1 +1,3 @@
-export default require('./routes');
+import routes from './routes';
+
+export default routes;

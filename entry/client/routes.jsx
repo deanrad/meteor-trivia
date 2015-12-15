@@ -1,6 +1,9 @@
+import TodoApp from 'TodoApp/client';
+import AdminApp from 'AdminApp/client';
+
 ReactRouterSSR.Run({
   childRoutes: [
-    require('TodoApp/client'),
-    require('AdminApp/client')
+    TodoApp,
+    AdminApp
   ]
 });
