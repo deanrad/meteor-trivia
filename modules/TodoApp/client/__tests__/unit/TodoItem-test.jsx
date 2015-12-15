@@ -1,6 +1,7 @@
-import TestUtils from 'react-addons-test-utils';
 import TodoItem from 'TodoApp/client/components/TodoItem';
 import style from 'TodoApp/client/css/TodoApp.import.css';
+
+const TestUtils = React.addons.TestUtils;
 
 describe('TodoItem', () => {
   it('should display the task text and owner name', () => {
