@@ -23,6 +23,4 @@ accounts-ui
 accounts-password
 
 
-sanjo:jasmine
-velocity:console-reporter
 reactrouter:react-router-ssr
