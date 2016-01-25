@@ -13,7 +13,7 @@ export default class TodoMain extends Component {
 
   state = {
     hideCompleted: false
-  }
+  };
 
   getMeteorData() {
     Meteor.subscribe('tasks');
@@ -36,7 +36,7 @@ export default class TodoMain extends Component {
 
   handleToggleHideCompleted = (e) => {
     this.setState({ hideCompleted: e.target.checked });
-  }
+  };
 
   render() {
     if (!this.data.tasks) {

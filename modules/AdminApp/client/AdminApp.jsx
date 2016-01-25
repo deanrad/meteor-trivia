@@ -7,7 +7,7 @@ import style from './css/AdminApp.import.css';
 export default class AdminApp extends Component {
   static propTypes = {
     children: PropTypes.any.isRequired
-  }
+  };
 
   render() {
     return (

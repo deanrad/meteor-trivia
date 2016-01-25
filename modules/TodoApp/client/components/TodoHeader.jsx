@@ -8,7 +8,7 @@ export default class TodoHeader extends Component {
     hideCompleted: PropTypes.bool,
     toggleHideCompleted: PropTypes.func.isRequired,
     incompleteCount: PropTypes.number.isRequired
-  }
+  };
 
   handleSubmit(event) {
     // Prevent default browser form submit

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 export default class TodoApp extends Component {
   static propTypes = {
     children: PropTypes.any.isRequired
-  }
+  };
 
   render() {
     return (

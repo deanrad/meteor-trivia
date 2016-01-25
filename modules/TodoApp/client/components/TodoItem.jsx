@@ -4,7 +4,7 @@ import style from 'TodoApp/client/css/TodoApp.import.css';
 export default class TodoItem extends Component {
   static propTypes = {
     task: PropTypes.object.isRequired
-  }
+  };
 
   handleChecked(e) {
     // Set the checked property to the opposite of its current value
