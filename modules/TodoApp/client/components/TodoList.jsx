@@ -4,7 +4,7 @@ import TodoItem from './TodoItem';
 export default class TodoList extends Component {
   static propTypes = {
     tasks: PropTypes.array.isRequired
-  }
+  };
 
   render() {
     return (
