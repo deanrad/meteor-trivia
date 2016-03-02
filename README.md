@@ -8,7 +8,7 @@ Kickstart a project with Meteor, React and react-router fast!
 
 You can try [other kickstart projects](https://github.com/thereactivestack/kickstart) with ReactRouter, FlowRouter or Redux.
 
-## Get tutorials and more examples at [TheReactiveStack.com](https://thereactivestack.com)
+## [Learn how to be productive with Meteor and Webpack in 7 days on TheReactiveStack.com](https://thereactivestack.com)
 
 # Production
 You can use meteor run, meteor build, mup or anything working with Meteor.
