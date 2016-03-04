@@ -3,8 +3,8 @@
   "private": "true",
   "version": "1.0.0",
   "description": "Kickstart a project with Meteor, React and react-router fast!",
-  "main": "apps/server.js",
-  "browser": "apps/client.js",
+  "main": "src/server.js",
+  "browser": "src/client.js",
   "dependencies": {
     "react": "~0.14.1",
     "react-mixin": "^3.0.3"
