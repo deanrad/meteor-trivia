@@ -93,8 +93,8 @@ webapp@1.2.3
 webapp-hashing@1.0.5
 webpack:assets@1.0.0
 webpack:core-config@1.0.0
-webpack:css@1.0.1
+webpack:css@1.1.0
 webpack:npmworkaround@1.0.0
-webpack:react@1.1.2
+webpack:react@1.1.3
 webpack:reload@1.0.0
-webpack:webpack@1.0.8
+webpack:webpack@1.0.10
