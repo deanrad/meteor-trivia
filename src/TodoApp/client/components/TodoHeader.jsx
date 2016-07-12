@@ -39,7 +39,7 @@ export default class TodoHeader extends Component {
       <header>
         <h1>
           <img src={require('TodoApp/client/img/check.png')} alt="" />
-          Todo List ({this.props.incompleteCount})
+          Meow List ({this.props.incompleteCount})
         </h1>
 
         <label className="hideCompleted">

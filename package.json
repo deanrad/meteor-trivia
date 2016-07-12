@@ -5,6 +5,9 @@
   "description": "Kickstart a project with Meteor, React and react-router fast!",
   "main": "src/server.js",
   "browser": "src/client.js",
+  "scripts": {
+    "start": "meteor --port 4160"
+  },
   "dependencies": {
     "react": "^15.0.0",
     "react-addons-pure-render-mixin": "^15.0.0",
