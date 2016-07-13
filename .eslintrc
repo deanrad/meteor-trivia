@@ -1,0 +1,59 @@
+{
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "plugins": [
+      "meteor",
+      "react"
+    ],
+    "extends": [
+      "airbnb/base",
+      "plugin:meteor/guide",
+      "plugin:react/recommended"
+    ],
+    "globals": {
+      "server": false,
+      "browser": false,
+      "expect": false
+    },
+    "rules": {
+      "import/no-unresolved": 0,
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id",
+            "_ensureIndex",
+            "_verifyEmailToken",
+            "_resetPasswordToken",
+            "_name",
+            "_stream"
+          ]
+        }
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "semi": [
+        2,
+        "never"
+      ],
+      "prefer-arrow-callback": 2,
+      "arrow-body-style": 0,
+      "object-shorthand": 0,
+      "comma-dangle": 0,
+      "func-names": 0,
+      "consistent-return": 0,
+      "no-else-return": 0,
+      "space-before-function-paren": 0,
+      "prefer-template": 0,
+      "prefer-const": 0,
+      "no-shadow": 0,
+      "no-param-reassign": 0,
+      "vars-on-top": 0,
+      "no-console": 0
+    }
+  }

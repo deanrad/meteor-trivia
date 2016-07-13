@@ -10,14 +10,8 @@ mongo                   # The database Meteor supports right now
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
+jsx
 es5-shim                # ECMAScript 5 compatibility for older browsers.
-
-react-meteor-data
-
-webpack:webpack
-webpack:react
-webpack:css
-webpack:assets
 
 accounts-ui
 accounts-password
@@ -25,4 +19,3 @@ blaze-html-templates
 standard-minifier-css
 standard-minifier-js
 reactrouter:react-router-ssr
-thereactivestack:blazetoreact
