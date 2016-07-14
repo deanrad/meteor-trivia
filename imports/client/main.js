@@ -1,4 +1,5 @@
-import routes from '/imports/routes'
+// import routes from '/imports/routes'
+import routes from './routes'
 
 import { dispatchAction } from '../methods/dispatchAction'
 
