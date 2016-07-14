@@ -6,6 +6,7 @@ const TriviaApp = () => (
   <h1>Trivia !</h1>
 )
 
+// eslint-disable-next-line new-cap
 ReactRouterSSR.Run(
   <Route>
     <Route path="/" component={TriviaApp} />
