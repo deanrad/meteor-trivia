@@ -8,7 +8,6 @@ Meteor.atClient(() => {
     it('should be defined on the window object', () => {
       expect(window.dispatchAction).to.be.a('function')
     })
-    it('should have an optimistic handler to dispatch optimistic actions to the store directly')
   })
 })
 
@@ -28,7 +27,9 @@ Meteor.atServer(() => {
     it('contains actions which came from our clients')
   })
   describe('clientUpdatesStream', () => {
+    it('is derived from incomingClientActions')
     it('contains the updates to push out to all clients')
+    it('filters correctAnswers from outgoing messages')
   })
 })
 
@@ -67,3 +68,14 @@ describe('The store', () => {
   })
 })
 
+describe('Actions', () => {
+  it('contain type, meta, and payload fields')
+  describe('#payload', () => {
+    it('contains a POJO (not immutable)')
+  })
+  Meteor.atClient(() => {
+    describe('#meta', () => {
+      it('can have optimistic:true to force dispatch on the client before server')
+    })
+  })
+})

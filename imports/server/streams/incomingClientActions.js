@@ -1,3 +1,3 @@
-import xs from 'xstream'
+import Rx from 'rx'
 
-export default xs.create()
+export default new Rx.Subject()
