@@ -1,8 +1,9 @@
 import { createAction } from 'redux-act'
 
 export const initialState = {
-  name: 'Meteor Redux Trivia',
+  title: 'Meteor Redux Trivia',
   players: [],
+  status: 'awaiting players',
   questions: [
     {
       prompt: 'Meteor had which earlier name?',
@@ -16,5 +17,13 @@ export const initialState = {
     }
   ]
 }
-export const actionReducers = {}
-export const actions = {}
+
+let begin = createAction('GAME_BEGIN')
+
+export const actionReducers = {
+  [begin]: (state) => state.set('status', 'game on!')
+}
+
+export const actions = {
+  begin
+}

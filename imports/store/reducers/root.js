@@ -6,7 +6,7 @@ import * as Game from './game'
 
 let initialState = fromJS(Meteor.isClient ? {} : Game.initialState)
 let stateReducer = combineReducers({
-  game: createReducer({}, initialState)
+  game: createReducer(Game.actionReducers, initialState)
 })
 
 // eslint-disable-next-line import/no-mutable-exports

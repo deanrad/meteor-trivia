@@ -1,3 +1,6 @@
 import Rx from 'rx'
 
-export default new Rx.Subject()
+let subject = new Rx.Subject()
+
+export const pushNext = subject.onNext.bind(subject)
+export default subject.asObservable()

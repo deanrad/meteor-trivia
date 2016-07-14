@@ -1,27 +1,23 @@
 {
-   "methods/dispatchAction" : [
-      "deanius:uni-method",
-      "meteor",
-      "client/methods",
-      "server/methods"
-   ],
-   "store/reducers/game" : [
-      "npm:redux-act"
-   ],
-   "client/main" : [
-      "routes",
-      "client/serverActionsReceiver",
-      "client/subscribeServerActions",
-      "methods/dispatchAction"
-   ],
-   "server/streams/incomingClientActions" : [
-      "npm:rx"
-   ],
-   "store/reducers/client/reset" : [
-      "npm:redux-act"
-   ],
-   "server/streams/clientUpdatesStream" : [
+   "server/methods" : [
+      "npm:immutable/dist/immutable",
       "server/streams/incomingClientActions"
+   ],
+   "components/TriviaApp" : [
+      "npm:react"
+   ],
+   "server/main" : [
+      "routes",
+      "methods/dispatchAction",
+      "server/publications/serverActions"
+   ],
+   "client/methods" : [],
+   "routes" : [
+      "reactrouter:react-router-ssr",
+      "npm:react-redux",
+      "npm:react-router",
+      "npm:react",
+      "components/TriviaApp"
    ],
    "server/publications/serverActions" : [
       "store",
@@ -29,20 +25,34 @@
       "server/publications/createPublication",
       "server/streams/clientUpdatesStream"
    ],
+   "methods/dispatchAction" : [
+      "deanius:uni-method",
+      "meteor",
+      "client/methods",
+      "server/methods"
+   ],
+   "client/main" : [
+      "routes",
+      "client/serverActionsReceiver",
+      "client/subscribeServerActions",
+      "methods/dispatchAction"
+   ],
    "client/streams/serverActionsStream" : [
       "npm:xstream"
    ],
-   "server/methods" : [
-      "npm:immutable/dist/immutable",
-      "server/streams/incomingClientActions"
+   "store/reducers/client/reset" : [
+      "npm:redux-act"
    ],
-   "client/serverActionsReceiver" : [
-      "client/streams/serverActionsStream",
-      "store"
-   ],
-   "client/subscribeServerActions" : [
+   "server/publications/createPublication" : [
       "meteor",
-      "client/streams/serverActionsStream"
+      "underscore"
+   ],
+   "server/streams/incomingClientActions" : [
+      "npm:rx"
+   ],
+   "test/spec.test" : [
+      "meteor",
+      "npm:chai"
    ],
    "store" : [
       "meteor",
@@ -57,23 +67,18 @@
       "store/reducers/game",
       "store/reducers/client/reset"
    ],
-   "client/methods" : [],
-   "server/publications/createPublication" : [
+   "client/serverActionsReceiver" : [
+      "client/streams/serverActionsStream",
+      "store"
+   ],
+   "server/streams/clientUpdatesStream" : [
+      "server/streams/incomingClientActions"
+   ],
+   "client/subscribeServerActions" : [
       "meteor",
-      "underscore"
+      "client/streams/serverActionsStream"
    ],
-   "routes" : [
-      "reactrouter:react-router-ssr",
-      "npm:react-router",
-      "npm:react"
-   ],
-   "test/spec.test" : [
-      "meteor",
-      "npm:chai"
-   ],
-   "server/main" : [
-      "routes",
-      "methods/dispatchAction",
-      "server/publications/serverActions"
+   "store/reducers/game" : [
+      "npm:redux-act"
    ]
 }
