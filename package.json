@@ -1,8 +1,8 @@
 {
-  "name": "kickstart-meteor-react-router",
+  "name": "deanius-meteor-action-architecture",
   "private": "true",
   "version": "1.0.0",
-  "description": "Kickstart a project with Meteor, React and react-router fast!",
+  "description": "A reference project for an Action-Oriented Architecture for a Meteor application",
   "scripts": {
     "start": "meteor --port 7730",
     "lint": "eslint client/ imports/ server/ tests/",
