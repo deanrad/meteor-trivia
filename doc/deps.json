@@ -1,15 +1,51 @@
 {
-   "server/streams/incomingClientActions" : [
-      "npm:xstream"
+   "store/reducers/game" : [
+      "npm:redux-act"
    ],
-   "client/methods" : [
+   "store/reducers/root" : [
+      "meteor",
+      "npm:immutable/dist/immutable",
+      "npm:redux-act",
+      "npm:redux-immutable/dist",
+      "store/reducers/game",
+      "store/reducers/client/reset"
+   ],
+   "test/spec.test" : [
+      "meteor",
+      "npm:chai"
+   ],
+   "client/main" : [
+      "routes",
+      "client/serverActionsReceiver",
+      "client/subscribeServerActions",
+      "methods/dispatchAction"
+   ],
+   "client/serverActionsReceiver" : [
+      "client/streams/serverActionsStream",
       "store"
+   ],
+   "routes" : [
+      "reactrouter:react-router-ssr",
+      "npm:react-router",
+      "npm:react"
    ],
    "methods/dispatchAction" : [
       "deanius:uni-method",
       "meteor",
       "client/methods",
       "server/methods"
+   ],
+   "server/methods" : [
+      "server/streams/incomingClientActions"
+   ],
+   "server/publications/serverActions" : [
+      "store",
+      "mongo",
+      "server/publications/createPublication",
+      "server/streams/incomingClientActions"
+   ],
+   "store/reducers/client/reset" : [
+      "npm:redux-act"
    ],
    "server/publications/createPublication" : [
       "meteor",
@@ -18,50 +54,22 @@
    "client/streams/serverActionsStream" : [
       "npm:xstream"
    ],
-   "server/main" : [
-      "routes",
-      "methods/dispatchAction",
-      "server/publications/serverActions"
-   ],
-   "store" : [
-      "npm:redux",
-      "store/reducers/root"
-   ],
-   "methods/dispatchAction.test" : [
-      "meteor",
-      "npm:chai"
-   ],
-   "client/serverActionsReceiver" : [
-      "client/streams/serverActionsStream",
-      "store"
-   ],
    "client/subscribeServerActions" : [
       "meteor",
       "client/streams/serverActionsStream"
    ],
-   "test/misc.test" : [
+   "store" : [
       "meteor",
-      "npm:chai"
+      "npm:redux",
+      "store/reducers/root"
    ],
-   "server/methods" : [
-      "server/streams/incomingClientActions"
+   "server/streams/incomingClientActions" : [
+      "npm:xstream"
    ],
-   "store/reducers/root" : [],
-   "server/publications/serverActions" : [
-      "store",
-      "mongo",
-      "server/publications/createPublication",
-      "server/streams/incomingClientActions"
-   ],
-   "client/main" : [
+   "client/methods" : [],
+   "server/main" : [
       "routes",
-      "client/serverActionsReceiver",
-      "client/subscribeServerActions",
-      "methods/dispatchAction"
-   ],
-   "routes" : [
-      "reactrouter:react-router-ssr",
-      "npm:react-router",
-      "npm:react"
+      "methods/dispatchAction",
+      "server/publications/serverActions"
    ]
 }

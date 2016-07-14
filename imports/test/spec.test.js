@@ -42,12 +42,28 @@ Meteor.atServer(() => {
   describe('serverActions publication', () => {
     it('is published')
     it('publishes events from clientUpdatesStream')
+    it('publishes the server state to newly connected clients')
   })
 })
 
 Meteor.atClient(() => {
   describe('serverActionsStream', () => {
     it('has a listener for dispatching events to the store')
+  })
+})
+
+Meteor.atClient(() => {
+  describe('serverActionsReceiver', () => {
+    it('dispatches actions to the store')
+  })
+})
+
+describe('The store', () => {
+  it('is initialized, and will remain, an immutable Map')
+
+  Meteor.atClient(() => {
+    it('starts empty')
+    it('accepts a RESET action')
   })
 })
 

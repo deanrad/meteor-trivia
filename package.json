@@ -16,6 +16,7 @@
     "doc:all": "npm run doc:save && npm run doc:client && npm run doc:server && npm run doc:view"
   },
   "dependencies": {
+    "immutable": "^3.8.1",
     "react": "^15.0.2",
     "react-addons-pure-render-mixin": "^15.0.2",
     "react-bootstrap": "^0.29.4",

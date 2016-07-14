@@ -49,6 +49,7 @@ tweaked = deps.inject({}){ |all, (mod, deps)|
 
 # invisible ones
 tweaked['methods/dispatchAction'] << 'client/methods' << 'server/methods'
+tweaked['store/reducers/root'] << 'store/reducers/client/reset'
 
 exclude && tweaked.each{ |mod, deps| deps.reject!{ |d| d.include?(exclude) } }
 
