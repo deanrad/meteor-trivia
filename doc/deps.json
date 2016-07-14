@@ -1,20 +1,67 @@
 {
-   "store/reducers/root" : [],
+   "server/streams/incomingClientActions" : [
+      "npm:xstream"
+   ],
+   "client/methods" : [
+      "store"
+   ],
+   "methods/dispatchAction" : [
+      "deanius:uni-method",
+      "meteor",
+      "client/methods",
+      "server/methods"
+   ],
+   "server/publications/createPublication" : [
+      "meteor",
+      "underscore"
+   ],
+   "client/streams/serverActionsStream" : [
+      "npm:xstream"
+   ],
    "server/main" : [
       "routes",
+      "methods/dispatchAction",
+      "server/publications/serverActions"
+   ],
+   "store" : [
+      "npm:redux",
+      "store/reducers/root"
+   ],
+   "methods/dispatchAction.test" : [
+      "meteor",
+      "npm:chai"
+   ],
+   "client/serverActionsReceiver" : [
+      "client/streams/serverActionsStream",
       "store"
+   ],
+   "client/subscribeServerActions" : [
+      "meteor",
+      "client/streams/serverActionsStream"
+   ],
+   "test/misc.test" : [
+      "meteor",
+      "npm:chai"
+   ],
+   "server/methods" : [
+      "server/streams/incomingClientActions"
+   ],
+   "store/reducers/root" : [],
+   "server/publications/serverActions" : [
+      "store",
+      "mongo",
+      "server/publications/createPublication",
+      "server/streams/incomingClientActions"
    ],
    "client/main" : [
       "routes",
-      "store"
+      "client/serverActionsReceiver",
+      "client/subscribeServerActions",
+      "methods/dispatchAction"
    ],
    "routes" : [
       "reactrouter:react-router-ssr",
       "npm:react-router",
       "npm:react"
-   ],
-   "store" : [
-      "npm:redux",
-      "store/reducers/root"
    ]
 }

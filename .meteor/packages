@@ -19,3 +19,6 @@ blaze-html-templates
 standard-minifier-css
 standard-minifier-js
 reactrouter:react-router-ssr
+deanius:at-at
+deanius:uni-method
+practicalmeteor:mocha

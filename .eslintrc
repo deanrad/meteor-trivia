@@ -16,7 +16,9 @@
     "globals": {
       "server": false,
       "browser": false,
-      "expect": false
+      "expect": false,
+      "describe": false,
+      "it": false
     },
     "rules": {
       "import/no-unresolved": 0,
@@ -54,6 +56,7 @@
       "no-shadow": 0,
       "no-param-reassign": 0,
       "vars-on-top": 0,
-      "no-console": 0
+      "no-console": 0,
+      "no-unused-vars": 0
     }
   }

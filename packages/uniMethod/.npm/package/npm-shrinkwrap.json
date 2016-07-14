@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bluebird": {
+      "version": "3.4.1",
+      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.1.tgz",
+      "from": "bluebird@3.4.1"
+    }
+  }
+}

@@ -3,6 +3,9 @@
 require 'pp'
 require 'json'
 
+exclude = ARGV[1]
+# print exclude
+# exit 1
 
 deps = JSON.parse(STDIN.read)
 
@@ -22,6 +25,7 @@ noNodeMods = Proc.new { |dep|
     newdep = dep.dup
     newdep.sub! /.*node_modules\//, 'npm:'
     newdep.sub! /\/lib\/index$/, ''
+    newdep.sub! /\/index$/, ''
     newdep
 }
 
@@ -42,6 +46,11 @@ tweaked = deps.inject({}){ |all, (mod, deps)|
 
     all
 }
+
+# invisible ones
+tweaked['methods/dispatchAction'] << 'client/methods' << 'server/methods'
+
+exclude && tweaked.each{ |mod, deps| deps.reject!{ |d| d.include?(exclude) } }
 
 print JSON.dump(tweaked)
 print "\n"
