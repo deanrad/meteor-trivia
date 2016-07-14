@@ -1,3 +1,6 @@
+import '/imports/server/main'
+
+// import '../imports/routes'
 // import { ReactRouterSSR } from 'meteor/reactrouter:react-router-ssr'
 
 // // Do server-rendering only in production

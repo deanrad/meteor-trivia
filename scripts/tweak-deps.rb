@@ -1,0 +1,47 @@
+#!/bin/ruby
+
+require 'pp'
+require 'json'
+
+
+deps = JSON.parse(STDIN.read)
+
+# example = {
+#     "client/main":[],
+#     "routes":["../meteor/reactrouter:react-router-ssr","../node_modules/react-router/lib/index","../node_modules/react/react"],
+#     "server/main":[],
+#     "store/reducers/root":[],
+#     "store/store":["../node_modules/redux/lib/index","store/reducers/root"]
+# }
+
+noMeteor = Proc.new { |dep| 
+    dep.sub '../meteor/', ''
+}
+
+noNodeMods = Proc.new { |dep| 
+    newdep = dep.dup
+    newdep.sub! /.*node_modules\//, 'npm:'
+    newdep.sub! /\/lib\/index$/, ''
+    newdep
+}
+
+depth = Proc.new do |dep|
+    dep.sub %r{(\.\./)+imports/}, ''
+end
+
+double = Proc.new do |dep|
+    dep.sub %r{(.*)/(\1)$}, '\1'
+end
+
+tweaked = deps.inject({}){ |all, (mod, deps)| 
+    newKey = double.call(mod)
+
+    all[newKey] = deps.map do |dep|
+        double[depth[noNodeMods[noMeteor[dep]]]]
+    end
+
+    all
+}
+
+print JSON.dump(tweaked)
+print "\n"

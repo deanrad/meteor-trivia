@@ -1,0 +1,20 @@
+{
+   "store/reducers/root" : [],
+   "server/main" : [
+      "routes",
+      "store"
+   ],
+   "client/main" : [
+      "routes",
+      "store"
+   ],
+   "routes" : [
+      "reactrouter:react-router-ssr",
+      "npm:react-router",
+      "npm:react"
+   ],
+   "store" : [
+      "npm:redux",
+      "store/reducers/root"
+   ]
+}

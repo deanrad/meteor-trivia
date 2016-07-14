@@ -1,1 +1,1 @@
-import '/imports/routes'
+import '/imports/client/main'
