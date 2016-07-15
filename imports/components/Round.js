@@ -5,7 +5,7 @@ export const Round = ({ question, judged }) => {
 
   return (
     <div>
-      Question: {question.prompt}
+      Question {judged ? '(judged)' : '(open)'}: {question.prompt}
     </div>
   )
 }

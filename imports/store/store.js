@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor'
-import { createStore, combineReducers } from 'redux'
+import { createStore } from 'redux'
 import reducer from './reducers/root'
 
 let storeFactory = createStore

@@ -1,5 +1,4 @@
 /* eslint {curly: 0, no-use-before-define:0, global-require:0, import/no-mutable-exports:0} */
-import { Meteor } from 'meteor/meteor'
 import { fromJS } from 'immutable'
 import { combineReducers as createStateTree } from 'redux-immutable'
 import { createReducer } from 'redux-act'
@@ -12,6 +11,12 @@ import { resetAction, resetReducer } from './reset'
 let stateReducer = createStateTree({
   game: createReducer(Game.actionReducers, fromJS(Game.initialState)),
   round: createReducer(Round.actionReducers, fromJS(Round.initialState))
+})
+
+// export this so we can define an object suitable for insertion on startup
+export const initialStateTree = fromJS({
+  game: Game.initialState,
+  round: Round.initialState
 })
 
 let reducer = createDefaultedReducer({

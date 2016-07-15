@@ -1,4 +1,4 @@
-// import routes from '/imports/routes'
+/* eslint no-unused-vars:0 */
 import routes from './routes'
 
 import { dispatchAction } from '../methods/dispatchAction'
