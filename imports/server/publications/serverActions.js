@@ -6,7 +6,8 @@ import clientUpdatesStream, { sanitizePayload } from '../streams/clientUpdatesSt
 // Note - Mergebox will not publish events that are dupes of previous ones, thus the
 // inclusion of always-unique ObjectIDs on messages
 createPublication('serverActions', ({ connection, added, error, ready, onStop }) => {
-  console.log(`got subscriber ${connection.id}`)
+  console.log(`got subscriber ${connection.id}, sent state`,
+    JSON.stringify(sanitizePayload(store.getState()).toJS()))
   added('serverActions', new Mongo.ObjectID(),
     {
       type: 'RESET',
