@@ -10,7 +10,7 @@
     "test:fast": "# TODO add test suite",
     "test": "npm run test:fast",
     "doc:client": "madge -j -f es6  -x 'server/|test|uni-method|meteor|immutable|redux-act' imports/ | ruby scripts/tweak-deps.rb -x server/ | madge -r -i doc/deps-client.png",
-    "doc:server": "madge -j -f es6  -x 'client/|test|uni-method|meteor|immutable|redux-act' imports/ | ruby scripts/tweak-deps.rb -x client/ | madge -r -i doc/deps-server.png",
+    "doc:server": "madge -j -f es6  -x 'client/|test|uni-method|meteor|immutable|redux-act|components' imports/ | ruby scripts/tweak-deps.rb -x client/ | madge -r -i doc/deps-server.png",
     "doc:save": "madge -j -f es6 imports/ | ruby scripts/tweak-deps.rb | json_pp > doc/deps.json",
     "doc:view": "open doc/*.png",
     "doc:all": "npm run doc:save && npm run doc:client && npm run doc:server && npm run doc:view"

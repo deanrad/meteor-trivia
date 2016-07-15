@@ -1,40 +1,16 @@
 {
-   "server/publications/createPublication" : [
-      "meteor",
-      "underscore"
-   ],
-   "test/spec.test" : [
-      "meteor",
-      "npm:chai"
-   ],
-   "server/streams/incomingClientActions" : [
-      "npm:rx"
-   ],
-   "store" : [
-      "meteor",
-      "npm:redux",
-      "store/reducers/root"
-   ],
-   "server/mappers/actionToConsequences" : [],
-   "components/TriviaApp" : [
-      "npm:react",
-      "components/Round"
-   ],
-   "components/Round" : [
-      "npm:react"
-   ],
-   "server/main" : [
-      "methods/dispatchAction",
-      "server/listeners/dispatchConsequencesOfActions",
-      "server/publications/serverActions"
-   ],
    "server/streams/consequencesOfActions" : [
       "server/mappers/actionToConsequences",
       "server/streams/incomingClientActions"
    ],
-   "store/reducers/client/reset" : [
-      "npm:immutable/dist/immutable",
+   "store/reducers/round" : [
       "npm:redux-act"
+   ],
+   "client/methods" : [],
+   "store" : [
+      "meteor",
+      "npm:redux",
+      "store/reducers/root"
    ],
    "methods/dispatchAction" : [
       "deanius:uni-method",
@@ -42,40 +18,9 @@
       "client/methods",
       "server/methods"
    ],
-   "server/methods" : [
-      "npm:immutable/dist/immutable",
-      "server/streams/incomingClientActions"
-   ],
-   "server/streams/clientUpdatesStream" : [
-      "server/streams/incomingClientActions"
-   ],
-   "client/main" : [
-      "client/routes",
-      "client/serverActionsReceiver",
-      "client/subscribeServerActions",
-      "methods/dispatchAction"
-   ],
-   "server/publications/serverActions" : [
-      "store",
-      "mongo",
-      "server/publications/createPublication",
-      "server/streams/clientUpdatesStream"
-   ],
-   "client/methods" : [],
-   "client/streams/serverActionsStream" : [
-      "npm:xstream"
-   ],
-   "server/listeners/dispatchConsequencesOfActions" : [
-      "store",
-      "server/streams/consequencesOfActions"
-   ],
-   "client/subscribeServerActions" : [
+   "test/spec.test" : [
       "meteor",
-      "client/streams/serverActionsStream"
-   ],
-   "client/serverActionsReceiver" : [
-      "client/streams/serverActionsStream",
-      "store"
+      "npm:chai"
    ],
    "client/routes" : [
       "meteor",
@@ -86,8 +31,45 @@
       "components/TriviaApp",
       "store"
    ],
-   "store/reducers/round" : [
+   "components/Round" : [
+      "npm:react"
+   ],
+   "server/main" : [
+      "methods/dispatchAction",
+      "server/listeners/dispatchConsequencesOfActions",
+      "server/publications/serverActions"
+   ],
+   "server/listeners/dispatchConsequencesOfActions" : [
+      "store",
+      "server/streams/consequencesOfActions"
+   ],
+   "server/streams/clientUpdatesStream" : [
+      "server/streams/incomingClientActions"
+   ],
+   "server/streams/incomingClientActions" : [
+      "npm:rx"
+   ],
+   "components/TriviaApp" : [
+      "npm:react",
+      "components/Round"
+   ],
+   "server/publications/createPublication" : [
+      "meteor",
+      "underscore"
+   ],
+   "server/publications/serverActions" : [
+      "store",
+      "mongo",
+      "server/publications/createPublication",
+      "server/streams/clientUpdatesStream"
+   ],
+   "store/reducers/game" : [
+      "meteor",
       "npm:redux-act"
+   ],
+   "client/serverActionsReceiver" : [
+      "client/streams/serverActionsStream",
+      "store"
    ],
    "store/reducers/root" : [
       "meteor",
@@ -98,8 +80,26 @@
       "store/reducers/round",
       "store/reducers/client/reset"
    ],
-   "store/reducers/game" : [
-      "meteor",
+   "store/reducers/client/reset" : [
+      "npm:immutable/dist/immutable",
       "npm:redux-act"
+   ],
+   "client/subscribeServerActions" : [
+      "meteor",
+      "client/streams/serverActionsStream"
+   ],
+   "client/streams/serverActionsStream" : [
+      "npm:xstream"
+   ],
+   "client/main" : [
+      "client/routes",
+      "client/serverActionsReceiver",
+      "client/subscribeServerActions",
+      "methods/dispatchAction"
+   ],
+   "server/mappers/actionToConsequences" : [],
+   "server/methods" : [
+      "npm:immutable/dist/immutable",
+      "server/streams/incomingClientActions"
    ]
 }
