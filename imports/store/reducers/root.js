@@ -5,6 +5,7 @@ import { combineReducers as createStateTree } from 'redux-immutable'
 import { createReducer } from 'redux-act'
 import * as Game from './game'
 import * as Round from './round'
+import { resetAction, resetReducer } from './reset'
 
 // The magic! We define our state, and delegate control over its parts
 // to corresponding reducers
@@ -13,18 +14,9 @@ let stateReducer = createStateTree({
   round: createReducer(Round.actionReducers, fromJS(Round.initialState))
 })
 
-let reducer = stateReducer
-
-if (Meteor.isClient) {
-  // the client can allow its state to be fully reset
-  let { resetAction, resetReducer } = require('./client/reset')
-
-  // intercept initial 'global' actions; allow others to be handled normally
-  reducer = createDefaultedReducer(
-    {
-      [resetAction]: resetReducer
-    }, stateReducer)
-}
+let reducer = createDefaultedReducer({
+  [resetAction]: resetReducer
+}, stateReducer)
 
 function createDefaultedReducer (actions, defaultReducer) {
   return (state, action) => {
