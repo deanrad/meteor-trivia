@@ -8,7 +8,7 @@ import { initialStateTree } from '/imports/store/reducers/root'
 Meteor.startup(() => {
   if (Games.find().count() === 0) {
     console.log('seeding initial game')
-    Games.insert(initialStateTree)
+    Games.insert(initialStateTree.toJS())
   }
 
   let singletonGame = Games.findOne()
