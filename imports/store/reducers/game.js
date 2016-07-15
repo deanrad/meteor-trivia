@@ -1,6 +1,7 @@
+import { Meteor } from 'meteor/meteor'
 import { createAction } from 'redux-act'
 
-export const initialState = {
+export const initialState = Meteor.isClient ? {} : {
   title: 'Meteor Redux Trivia',
   players: [],
   status: 'awaiting players',

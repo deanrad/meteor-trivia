@@ -3,27 +3,29 @@ import { fromJS } from 'immutable'
 import { combineReducers } from 'redux-immutable'
 import { createReducer } from 'redux-act'
 import * as Game from './game'
+import * as Round from './round'
 
-let initialState = fromJS(Meteor.isClient ? {} : Game.initialState)
+// The magic! We define our state, and delegate control over its parts
+// to corresponding reducers
 let stateReducer = combineReducers({
-  game: createReducer(Game.actionReducers, initialState)
+  game: createReducer(Game.actionReducers, fromJS(Game.initialState)),
+  round: createReducer(Round.actionReducers, fromJS(Round.initialState))
 })
 
-// eslint-disable-next-line import/no-mutable-exports
-let reducer = stateReducer
+let reducer = stateReducer      // eslint-disable-line import/no-mutable-exports
 
 // the client can allow its state to be fully reset
 if (Meteor.isClient) {
   // eslint-disable-next-line global-require
-  let { resetAction } = require('./client/reset')
+  let { resetAction, resetReducer } = require('./client/reset')
+
   // intercept RESET events; allow others to be handled normally
-  let resetReducer = (state, action) => {
-    if (resetAction.toString() === action.type) {
-      return fromJS(action.payload)
-    }
+  reducer = (state, action) => {
+    let newState = resetReducer(state, action)
+    if (newState != state) return newState  // eslint-disable-line eqeqeq
+
     return stateReducer(state, action)
   }
-  reducer = resetReducer
 }
 
 export default reducer

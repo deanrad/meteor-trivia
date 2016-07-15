@@ -1,7 +1,7 @@
 import incomingClientActions from './incomingClientActions'
 
 export const sanitizePayload = (payload) => {
-  return payload.updateIn(['game', 'questions'],
+  return payload && payload.updateIn(['game', 'questions'],
     qs => qs && qs.map(q => q.delete('correctAnswer')))
 }
 
