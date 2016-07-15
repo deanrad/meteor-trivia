@@ -8,7 +8,7 @@ let singletonId = singletonGame && singletonGame._id
 
 // We want latencies from this listener not to block other listeners
 storeStateStream.subscribe(state => Meteor.defer(() => {
-  console.log('Updating mongo with new state...')
+  console.log('Updating mongo game', singletonId)
 
   // XXX in future a more granular update could be produced off of the last two states
   // for now we're just clobbering the whole mongo document - I suspect it's smart about
