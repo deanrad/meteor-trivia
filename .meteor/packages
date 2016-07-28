@@ -23,3 +23,4 @@ deanius:at-at
 deanius:uni-method
 practicalmeteor:mocha
 froatsnook:sleep
+dispatch:mocha-phantomjs

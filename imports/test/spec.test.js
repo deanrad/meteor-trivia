@@ -1,3 +1,4 @@
+// runs via npm run test:meteor:unit
 import { Meteor } from 'meteor/meteor'
 import { expect } from 'chai'
 

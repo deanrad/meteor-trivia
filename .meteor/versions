@@ -27,6 +27,8 @@ deanius:at-at@0.2.2
 deanius:uni-method@1.0.0
 deps@1.0.12
 diff-sequence@1.0.6
+dispatch:mocha-phantomjs@0.1.7
+dispatch:phantomjs-tests@0.0.5
 ecmascript@0.4.7
 ecmascript-runtime@0.2.12
 ejson@1.0.12

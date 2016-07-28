@@ -8,6 +8,8 @@
     "lint": "eslint client/ imports/ server/ spec/",
     "lint:fix": "eslint --fix client/ imports/ server/ spec/",
     "test:fast": "mocha --compilers js:babel-register -R spec 'spec/**/*.js'",
+    "test:meteor:unit:watch": "meteor test --driver-package practicalmeteor:mocha",
+    "test:meteor:unit": "meteor test --once --driver-package dispatch:mocha-phantomjs",
     "test": "npm run test:fast",
     "doc:client": "madge -j -f es6 -x 'server/|test|uni-method|meteor|immutable|redux-act|react|collections' imports/ | ruby scripts/tweak-deps.rb -x server/ | madge -r -i doc/deps-client.png",
     "doc:server": "madge -j -f es6 -x 'client/|test|uni-method|meteor|immutable|redux-act|components' imports/ | ruby scripts/tweak-deps.rb -x client/ | madge -r -i doc/deps-server.png",
