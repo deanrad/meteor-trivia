@@ -68,12 +68,19 @@ describe('store state machine (server', () => {
 
   describe('#ADVANCE_QUESTION', () => {
     let oldState
+    let oldQ
     let newState
 
     oldState = store.getState()
+    oldQ = oldState.getIn(['game', 'questions', 0]).toJS()
     store.dispatch({ type: 'ADVANCE_QUESTION' })
     newState = store.getState()
 
+    describe('round.question', () => {
+      it('should have the next question', () => {
+        expect(state.getIn(['round', 'question'])).to.eql(oldQ)
+      })
+    })
 
     describe('game.questions', () => {
       it('should have 1 fewer', () => {
