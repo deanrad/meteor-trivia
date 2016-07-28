@@ -1,66 +1,4 @@
 {
-   "server/streams/consequencesOfActions" : [
-      "server/mappers/actionToConsequences",
-      "server/streams/incomingClientActions"
-   ],
-   "store/reducers/advanceQuestion" : [
-      "npm:redux-act"
-   ],
-   "server/listeners/writeActionsToMongo" : [
-      "meteor",
-      "collections",
-      "server/streams/storeStateStream"
-   ],
-   "server/streams/clientUpdatesStream" : [
-      "server/streams/consequencesOfActions"
-   ],
-   "components/Round" : [
-      "npm:react"
-   ],
-   "store/reducers/game" : [
-      "npm:redux-act"
-   ],
-   "server/mappers/actionToConsequences" : [],
-   "methods/server/dispatchAction" : [
-      "server/streams/incomingClientActions",
-      "deanius:uni-method",
-      "npm:immutable/dist/immutable"
-   ],
-   "methods/client/dispatchAction" : [
-      "deanius:uni-method"
-   ],
-   "client/streams/serverActionsStream" : [
-      "npm:xstream"
-   ],
-   "server/startup/populateStoreFromMongo" : [
-      "collections",
-      "store/reducers/reset",
-      "store/reducers/root",
-      "store",
-      "meteor"
-   ],
-   "client/main" : [
-      "client/redundantlySubscribeToGameUpdates",
-      "client/routes",
-      "client/serverActionsReceiver",
-      "client/subscribeServerActions",
-      "methods/client/dispatchAction"
-   ],
-   "store/reducers/round" : [
-      "npm:redux-act"
-   ],
-   "client/subscribeServerActions" : [
-      "meteor",
-      "client/streams/serverActionsStream"
-   ],
-   "server/listeners/dispatchConsequencesOfActions" : [
-      "store",
-      "server/streams/consequencesOfActions"
-   ],
-   "test/spec.test" : [
-      "meteor",
-      "npm:chai"
-   ],
    "store/reducers/root" : [
       "npm:immutable/dist/immutable",
       "npm:redux-act",
@@ -70,9 +8,56 @@
       "store/reducers/reset",
       "store/reducers/round"
    ],
-   "store/reducers/reset" : [
-      "npm:immutable/dist/immutable",
+   "client/main" : [
+      "client/redundantlySubscribeToGameUpdates",
+      "client/routes",
+      "client/serverActionsReceiver",
+      "client/subscribeServerActions",
+      "methods/client/dispatchAction"
+   ],
+   "components/TriviaApp" : [
+      "npm:react",
+      "components/Round"
+   ],
+   "server/streams/incomingClientActions" : [
+      "npm:rx"
+   ],
+   "server/streams/storeStateStream" : [
+      "npm:rx",
+      "store"
+   ],
+   "components/Round" : [
+      "npm:react"
+   ],
+   "client/streams/serverActionsStream" : [
+      "npm:xstream"
+   ],
+   "methods/client/dispatchAction" : [
+      "deanius:uni-method"
+   ],
+   "server/listeners/writeActionsToMongo" : [
+      "meteor",
+      "collections",
+      "server/streams/storeStateStream"
+   ],
+   "server/listeners/dispatchConsequencesOfActions" : [
+      "store",
+      "server/streams/consequencesOfActions"
+   ],
+   "store/reducers/game" : [
       "npm:redux-act"
+   ],
+   "client/subscribeServerActions" : [
+      "meteor",
+      "client/streams/serverActionsStream"
+   ],
+   "client/redundantlySubscribeToGameUpdates" : [
+      "collections",
+      "meteor"
+   ],
+   "test/spec.test" : [
+      "meteor",
+      "npm:chai"
    ],
    "client/routes" : [
       "meteor",
@@ -82,6 +67,49 @@
       "npm:react",
       "components/TriviaApp",
       "store"
+   ],
+   "store/reducers/advanceQuestion" : [
+      "npm:redux-act"
+   ],
+   "server/publications/createPublication" : [
+      "meteor",
+      "underscore"
+   ],
+   "collections" : [
+      "mongo"
+   ],
+   "store" : [
+      "meteor",
+      "npm:redux",
+      "store/reducers/root"
+   ],
+   "server/mappers/actionToConsequences" : [],
+   "server/streams/clientUpdatesStream" : [
+      "server/streams/consequencesOfActions"
+   ],
+   "server/startup/populateStoreFromMongo" : [
+      "collections",
+      "store/reducers/reset",
+      "store/reducers/root",
+      "store",
+      "meteor"
+   ],
+   "server/publications/serverActions" : [
+      "store",
+      "mongo",
+      "server/publications/createPublication",
+      "server/streams/clientUpdatesStream"
+   ],
+   "server/streams/consequencesOfActions" : [
+      "server/mappers/actionToConsequences",
+      "server/streams/incomingClientActions"
+   ],
+   "store/reducers/round" : [
+      "npm:redux-act"
+   ],
+   "server/publications/game" : [
+      "collections",
+      "server/publications/createPublication"
    ],
    "client/serverActionsReceiver" : [
       "client/streams/serverActionsStream",
@@ -96,41 +124,13 @@
       "server/publications/serverActions",
       "server/startup/populateStoreFromMongo"
    ],
-   "server/streams/incomingClientActions" : [
-      "npm:rx"
+   "methods/server/dispatchAction" : [
+      "server/streams/incomingClientActions",
+      "deanius:uni-method",
+      "npm:immutable/dist/immutable"
    ],
-   "server/publications/createPublication" : [
-      "meteor",
-      "underscore"
-   ],
-   "server/streams/storeStateStream" : [
-      "npm:rx",
-      "store"
-   ],
-   "server/publications/game" : [
-      "collections",
-      "server/publications/createPublication"
-   ],
-   "client/redundantlySubscribeToGameUpdates" : [
-      "collections",
-      "meteor"
-   ],
-   "components/TriviaApp" : [
-      "npm:react",
-      "components/Round"
-   ],
-   "collections" : [
-      "mongo"
-   ],
-   "server/publications/serverActions" : [
-      "store",
-      "mongo",
-      "server/publications/createPublication",
-      "server/streams/clientUpdatesStream"
-   ],
-   "store" : [
-      "meteor",
-      "npm:redux",
-      "store/reducers/root"
+   "store/reducers/reset" : [
+      "npm:immutable/dist/immutable",
+      "npm:redux-act"
    ]
 }

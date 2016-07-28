@@ -3,7 +3,7 @@ import '/spec/specHelper'
 import { Meteor } from 'meteor/meteor'
 import store from '/imports/store/store'
 
-describe('store state machine (server', () => {
+describe('store state machine (server)', () => {
   let state = store.getState()
   describe('#INIT', () => {
     before(() => {
