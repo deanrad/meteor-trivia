@@ -5,10 +5,11 @@ import store from '/imports/store/store'
 
 describe('store state machine (server', () => {
   let state = store.getState()
-  describe('#start', () => {
+  describe('#INIT', () => {
     before(() => {
-      expect(Meteor.isClient).to.equal(false)
-      // dispatch no actions
+      // ensure were using the server version
+      expect([Meteor.isClient, Meteor.isServer]).to.eql([false, true])
+      // but, dispatch no actions
     })
 
     describe('game.status', () => {
@@ -23,7 +24,7 @@ describe('store state machine (server', () => {
     })
   })
 
-  describe('#game_begun', () => {
+  describe('#GAME_BEGIN', () => {
     before(() => {
       store.dispatch({ type: 'GAME_BEGIN' })
       state = store.getState()
@@ -34,15 +35,9 @@ describe('store state machine (server', () => {
         expect(state).to.have.deep.property('game.status', 'game on!')
       })
     })
-    describe('round.question', () => {
-      it('null', () => {
-        expect(state).to.have
-          .deep.property('round.question', null)
-      })
-    })
   })
 
-  describe('#round_begun', () => {
+  describe('#ROUND_BEGIN', () => {
     before(() => {
       store.dispatch({ type: 'ROUND_BEGIN' })
       state = store.getState()
@@ -53,6 +48,38 @@ describe('store state machine (server', () => {
         expect(state).to.have
           .deep.property('round.question')
           .that.has.all.keys(['prompt', 'choices', 'correctAnswer'])
+      })
+    })
+  })
+
+  describe('#ROUND_JUDGE', () => {
+    before(() => {
+      store.dispatch({ type: 'ROUND_JUDGE' })
+      state = store.getState()
+    })
+
+    describe('round.judged', () => {
+      it('true', () => {
+        expect(state).to.have
+          .deep.property('round.judged', true)
+      })
+    })
+  })
+
+  describe('#ADVANCE_QUESTION', () => {
+    let oldState
+    let newState
+
+    oldState = store.getState()
+    store.dispatch({ type: 'ADVANCE_QUESTION' })
+    newState = store.getState()
+
+
+    describe('game.questions', () => {
+      it('should have 1 fewer', () => {
+        let sizer = (state) => state.getIn(['game', 'questions']).size
+
+        expect(sizer(newState)).to.be.below(sizer(oldState))
       })
     })
   })
