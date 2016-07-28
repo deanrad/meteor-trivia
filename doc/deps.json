@@ -1,22 +1,56 @@
 {
+   "server/publications/createPublication" : [
+      "meteor",
+      "underscore"
+   ],
+   "store" : [
+      "meteor",
+      "npm:redux",
+      "store/reducers/root"
+   ],
    "store/reducers/root" : [
       "npm:immutable/dist/immutable",
       "npm:redux-act",
       "npm:redux-immutable/dist",
+      "store/reducers/advanceQuestion",
       "store/reducers/game",
       "store/reducers/reset",
       "store/reducers/round"
    ],
-   "server/streams/consequencesOfActions" : [
-      "server/mappers/actionToConsequences",
-      "server/streams/incomingClientActions"
+   "collections" : [
+      "mongo"
    ],
-   "server/listeners/dispatchConsequencesOfActions" : [
-      "store",
-      "server/streams/consequencesOfActions"
-   ],
-   "store/reducers/round" : [
+   "store/reducers/reset" : [
+      "npm:immutable/dist/immutable",
       "npm:redux-act"
+   ],
+   "server/publications/serverActions" : [
+      "store",
+      "mongo",
+      "server/publications/createPublication",
+      "server/streams/clientUpdatesStream"
+   ],
+   "client/streams/serverActionsStream" : [
+      "npm:xstream"
+   ],
+   "server/listeners/writeActionsToMongo" : [
+      "meteor",
+      "collections",
+      "server/streams/storeStateStream"
+   ],
+   "server/streams/incomingClientActions" : [
+      "npm:rx"
+   ],
+   "server/startup/populateStoreFromMongo" : [
+      "collections",
+      "store/reducers/reset",
+      "store/reducers/root",
+      "store",
+      "meteor"
+   ],
+   "server/streams/storeStateStream" : [
+      "npm:rx",
+      "store"
    ],
    "client/main" : [
       "client/redundantlySubscribeToGameUpdates",
@@ -25,16 +59,16 @@
       "client/subscribeServerActions",
       "methods/dispatchAction"
    ],
-   "server/publications/serverActions" : [
-      "store",
-      "mongo",
-      "server/publications/createPublication",
-      "server/streams/clientUpdatesStream"
+   "server/methods" : [
+      "npm:immutable/dist/immutable",
+      "server/streams/incomingClientActions"
    ],
-   "store" : [
-      "meteor",
-      "npm:redux",
-      "store/reducers/root"
+   "server/streams/clientUpdatesStream" : [
+      "server/streams/consequencesOfActions"
+   ],
+   "client/serverActionsReceiver" : [
+      "client/streams/serverActionsStream",
+      "store"
    ],
    "client/routes" : [
       "meteor",
@@ -45,46 +79,23 @@
       "components/TriviaApp",
       "store"
    ],
+   "server/streams/consequencesOfActions" : [
+      "server/mappers/actionToConsequences",
+      "server/streams/incomingClientActions"
+   ],
    "components/Round" : [
       "npm:react"
    ],
-   "server/publications/game" : [
-      "collections",
-      "server/publications/createPublication"
-   ],
-   "components/TriviaApp" : [
-      "npm:react",
-      "components/Round"
-   ],
-   "client/serverActionsReceiver" : [
-      "client/streams/serverActionsStream",
-      "store"
-   ],
-   "collections" : [
-      "mongo"
-   ],
-   "server/streams/storeStateStream" : [
-      "npm:rx",
-      "store"
-   ],
-   "server/streams/clientUpdatesStream" : [
+   "server/listeners/dispatchConsequencesOfActions" : [
+      "store",
       "server/streams/consequencesOfActions"
    ],
-   "server/publications/createPublication" : [
-      "meteor",
-      "underscore"
-   ],
-   "server/listeners/writeActionsToMongo" : [
-      "meteor",
-      "collections",
-      "server/streams/storeStateStream"
-   ],
-   "store/reducers/game" : [
+   "store/reducers/round" : [
       "npm:redux-act"
    ],
-   "server/methods" : [
-      "npm:immutable/dist/immutable",
-      "server/streams/incomingClientActions"
+   "client/redundantlySubscribeToGameUpdates" : [
+      "collections",
+      "meteor"
    ],
    "client/methods" : [],
    "methods/dispatchAction" : [
@@ -92,32 +103,6 @@
       "meteor",
       "client/methods",
       "server/methods"
-   ],
-   "server/startup/populateStoreFromMongo" : [
-      "collections",
-      "store/reducers/reset",
-      "store/reducers/root",
-      "store",
-      "meteor"
-   ],
-   "server/streams/incomingClientActions" : [
-      "npm:rx"
-   ],
-   "client/subscribeServerActions" : [
-      "meteor",
-      "client/streams/serverActionsStream"
-   ],
-   "store/reducers/reset" : [
-      "npm:immutable/dist/immutable",
-      "npm:redux-act"
-   ],
-   "test/spec.test" : [
-      "meteor",
-      "npm:chai"
-   ],
-   "client/redundantlySubscribeToGameUpdates" : [
-      "collections",
-      "meteor"
    ],
    "server/main" : [
       "collections",
@@ -128,8 +113,27 @@
       "server/publications/serverActions",
       "server/startup/populateStoreFromMongo"
    ],
+   "store/reducers/game" : [
+      "npm:redux-act"
+   ],
    "server/mappers/actionToConsequences" : [],
-   "client/streams/serverActionsStream" : [
-      "npm:xstream"
+   "server/publications/game" : [
+      "collections",
+      "server/publications/createPublication"
+   ],
+   "client/subscribeServerActions" : [
+      "meteor",
+      "client/streams/serverActionsStream"
+   ],
+   "test/spec.test" : [
+      "meteor",
+      "npm:chai"
+   ],
+   "store/reducers/advanceQuestion" : [
+      "npm:redux-act"
+   ],
+   "components/TriviaApp" : [
+      "npm:react",
+      "components/Round"
    ]
 }

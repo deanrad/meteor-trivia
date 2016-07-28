@@ -5,6 +5,7 @@ import { createReducer } from 'redux-act'
 import * as Game from './game'
 import * as Round from './round'
 import { resetAction, resetReducer } from './reset'
+import { advanceQuestionAction, advanceQuestionReducer } from './advanceQuestion'
 
 // The magic! We define our state, and delegate control over its parts
 // to corresponding reducers
@@ -20,7 +21,8 @@ export const initialStateTree = fromJS({
 })
 
 let reducer = createDefaultedReducer({
-  [resetAction]: resetReducer
+  [resetAction]: resetReducer,
+  [advanceQuestionAction]: advanceQuestionReducer
 }, stateReducer)
 
 function createDefaultedReducer (actions, defaultReducer) {

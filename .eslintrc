@@ -18,7 +18,9 @@
       "browser": false,
       "expect": false,
       "describe": false,
-      "it": false
+      "it": false,
+      "before": false,
+      "beforeEach": false
     },
     "rules": {
       "import/no-unresolved": 0,
