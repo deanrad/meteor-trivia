@@ -47,9 +47,6 @@ tweaked = deps.inject({}){ |all, (mod, deps)|
     all
 }
 
-# invisible ones
-tweaked['methods/dispatchAction'] << 'client/methods' << 'server/methods'
-
 exclude && tweaked.each{ |mod, deps| deps.reject!{ |d| d.include?(exclude) } }
 
 print JSON.dump(tweaked)

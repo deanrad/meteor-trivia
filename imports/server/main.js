@@ -1,6 +1,6 @@
 /* eslint no-unused-vars:0 */
 
-import { dispatchAction } from '../methods/dispatchAction'
+import { dispatchAction } from '../methods/server/dispatchAction'
 import serverActions from './publications/serverActions'
 
 import * as Collections from '../collections/collections'

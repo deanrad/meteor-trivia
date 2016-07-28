@@ -1,7 +1,7 @@
 /* eslint no-unused-vars:0 */
 import routes from './routes'
 
-import { dispatchAction } from '../methods/dispatchAction'
+import { dispatchAction } from '../methods/client/dispatchAction'
 
 import subscribeServerActions from './subscribeServerActions'
 import serverActionsReceiver from './serverActionsReceiver'
