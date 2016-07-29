@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import '/spec/specHelper'
+import '/tests/testHelper'
 import store from '/imports/store/store'
 import { createReducer as reduxify } from 'redux-act'
 import { createStore, combineReducers } from 'redux'

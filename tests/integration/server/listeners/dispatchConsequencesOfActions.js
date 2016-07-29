@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import '/spec/specHelper'
+import '/tests/testHelper'
 
 // This file must be imported for the dispatch to happen!
 // eslint-disable-next-line no-unused-vars

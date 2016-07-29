@@ -5,9 +5,9 @@
   "description": "A reference project for an Action-Oriented Architecture for a Meteor application",
   "scripts": {
     "start": "meteor --port 7730",
-    "lint": "eslint client/ imports/ server/ spec/",
-    "lint:fix": "eslint --fix client/ imports/ server/ spec/",
-    "test:fast": "mocha --compilers js:babel-register -R spec 'spec/**/*.js'",
+    "lint": "eslint client/ imports/ server/ tests/",
+    "lint:fix": "eslint --fix client/ imports/ server/ tests/",
+    "test:fast": "mocha --compilers js:babel-register -R spec 'tests/**/*.js'",
     "test:meteor:unit:watch": "meteor test --driver-package practicalmeteor:mocha",
     "test:meteor:unit": "meteor test --once --driver-package dispatch:mocha-phantomjs",
     "test": "npm run test:fast",

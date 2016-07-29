@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import '/spec/specHelper'
+import '/tests/testHelper'
 import { Meteor } from 'meteor/meteor'
 import store from '/imports/store/store'
 
