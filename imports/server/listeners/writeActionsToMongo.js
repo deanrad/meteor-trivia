@@ -6,12 +6,7 @@ import storeStateStream from '../streams/storeStateStream'
 let singletonGame = Games.findOne()
 let singletonId = singletonGame && singletonGame._id
 
-// We want latencies from this listener not to block other listeners
-// and cant simply use .observeOn(Rx.Scheduler.async) since we need to
-// be deferred Meteor-style or we get:
-// Error: Meteor code must always run within a Fiber.
-// Try wrapping callbacks that you pass to non-Meteor libraries with Meteor.bindEnvironment
-storeStateStream.subscribe(state => Meteor.defer(() => {
+let updateMongo = (state, singletonId) => {
   console.log('Updating mongo game', singletonId)
 
   // XXX in future a more granular update could be produced off of the last two states
@@ -21,4 +16,13 @@ storeStateStream.subscribe(state => Meteor.defer(() => {
   Games.update(singletonId, state)
 
   console.log('Mongo updated', state, singletonId)
-}))
+}
+
+// We want latencies from this listener not to block other listeners
+// and cant simply use .observeOn(Rx.Scheduler.async) since we need to
+// be deferred Meteor-style or we get:
+// Error: Meteor code must always run within a Fiber.
+// Try wrapping callbacks that you pass to non-Meteor libraries with Meteor.bindEnvironment
+
+// storeStateStream.subscribe(state => updateMongo(state, singletonId))
+storeStateStream.subscribe(state => Meteor.defer(() => { updateMongo(state, singletonId) }))
