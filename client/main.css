@@ -1,0 +1,50 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #673AB7;
+  color: white;
+}
+
+.voting {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  user-select: none;
+}
+
+.voting button {
+  flex: 1 0 0;
+
+  background-color: #673AB7;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 2rem;
+}
+
+.voting button:active {
+  background-color: white;
+  color: #311B92;
+}
+.voting button.voted {
+  background-color: #311B92;
+}
+.voting button:not(.voted) .label {
+  visibility: hidden;
+}
+.voting button .label {
+  opacity: 0.87;
+}
+.voting button.votedAgainst * {
+  opacity: 0.3;
+}
+
+@media only screen and (min-device-width: 500px) {
+  .voting {
+    flex-direction: row;
+  }
+}

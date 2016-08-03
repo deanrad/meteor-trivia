@@ -6,12 +6,12 @@ export const Round = ({ question, judged }) => {
   let { prompt, choices } = question
   return (
     <div>
-      Question {judged ? '(judged)' : '(open)'}: {prompt}
+    Question {judged ? '(judged)' : '(open)'}: {prompt}
 
-      <ol className='choices'>
-      {choices && choices.map(choice => (<li key={choice}>{choice}</li>))}
-      </ol>
+    <div className="voting">
+      {choices && choices.map(choice => (<button key={choice} className="vote">{choice}</button>))}
 
+    </div>
     </div>
   )
 }
