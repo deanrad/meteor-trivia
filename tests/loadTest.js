@@ -5,10 +5,16 @@
 /*
   To run:
   which meteor-down || npm install -g meteor-down
-  meteor-down tests/load/simple_app.js
+  meteor-down tests/load/simple_app.js URL_TO_TEST
 */
 
 // if-wrapping keeps this file from crashing non meteor-down tests
+var url = process.argv[3]
+if (!url) {
+  url = 'http://localhost:7730'
+}
+
+console.log('Running load test against ', url)
 if (typeof meteorDown !== 'undefined') {
   meteorDown.init(function (Meteor) {
     Meteor.call('dispatchAction', { type: 'RESET', payload: {} }, function (error, result) {
@@ -18,6 +24,6 @@ if (typeof meteorDown !== 'undefined') {
 
   meteorDown.run({
     concurrency: 10,
-    url: 'http://localhost:7730',
+    url: url,
   })
 }
