@@ -20,15 +20,15 @@ export const initialStateTree = fromJS({
   round: Round.initialState
 })
 
-let reducer = createPrioritizedReducer({
+let reducer = createDefaultedReducer({
   [resetAction]: resetReducer,
   [advanceQuestionAction]: advanceQuestionReducer,
   default: stateReducer
 })
 
-// Returns a reducer that prioritizes applying any action found in its map,
-// but which falls back to the reducer under the key 'default' (or the identity fn)
-function createPrioritizedReducer (actions) {
+// Returns a reducer that applies any action found in its map,
+// but otherwise defaults to the reducer under the key 'default' (or the identity fn)
+function createDefaultedReducer (actions) {
   return (state, action) => {
     let reducer = actions[action.type] || actions.default || (s => s)
     return reducer(state, action)
