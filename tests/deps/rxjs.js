@@ -57,7 +57,7 @@ describe('Rx', function () {
       setTimeout(() => {
         expect(callCount).to.equal(2)
         done()
-      }, 0)
+      }, 20)
     })
   })
 
