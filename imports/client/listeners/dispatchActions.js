@@ -1,5 +1,5 @@
-import serverActionsStream from './streams/serverActionsStream'
-import store from '../store/store'
+import serverActionsStream from '../streams/serverActionsStream'
+import store from '/imports/store/store'
 
 serverActionsStream.addListener({
   next: (a) => {

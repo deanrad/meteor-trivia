@@ -11,3 +11,5 @@ export const { dispatchAction } = UniMethod.methods({
     serverMethod: handleDispatch
   }
 })
+
+window.dispatchAction = dispatchAction

@@ -1,11 +1,9 @@
-/* eslint no-unused-vars:0 */
-import routes from './routes'
+import './routes'
 
-import { dispatchAction } from '../methods/client/dispatchAction'
+import './subscribeServerActions'
+import './listeners/dispatchActions'
+import './redundantlySubscribeToGameUpdates'
 
-import subscribeServerActions from './subscribeServerActions'
-import serverActionsReceiver from './serverActionsReceiver'
-import redundantlySubscribeToGameUpdates from './redundantlySubscribeToGameUpdates'
+import '../methods/client/dispatchAction'
 
-window.dispatchAction = dispatchAction
 window.log = console.log.bind(console)
