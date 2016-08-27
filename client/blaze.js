@@ -24,16 +24,16 @@ const observable = Rx.Observable.create(observer => {
 
 const rxToReactiveVar = (rx) => {
   let rvar = new ReactiveVar()
+  // if 2 onNext occur in same event loop, only the final value is used
+  // in the subsequent invalidations
   rx.subscribe(next => rvar.set(next))
   return rvar
 }
 
-let reactiveObservable
-Template.blaze.onCreated(() => {
-  // var self = this
-  reactiveObservable = rxToReactiveVar(observable)
+Template.blaze.onCreated(function() {
+  this.reactiveObservable = rxToReactiveVar(observable)
 })
 
 Template.blaze.helpers({
-  latestOfObservable: () => reactiveObservable.get()
+  latestOfObservable: () => Template.instance().reactiveObservable.get()
 })
