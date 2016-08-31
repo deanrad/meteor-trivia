@@ -20,6 +20,7 @@
     "deploy": "test -f config/settings_production.json && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy meteor-trivia.meteorapp.com --settings config/settings_production.json || echo 'config/settings_production.json not found - aborting'"
   },
   "dependencies": {
+    "@deanius/thistle": "^1.0.1",
     "immutable": "^3.8.1",
     "meteor-node-stubs": "^0.2.3",
     "react": "^15.0.2",

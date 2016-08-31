@@ -12,13 +12,17 @@ createPublication('serverActions', ({ connection, added, error, ready, onStop })
   added('serverActions', new Mongo.ObjectID(),
     {
       type: 'RESET',
-      payload: sanitizePayload(store.getState()).toJS()
+      payload: sanitizePayload(store.getState()).toJS(),
+      meta: {fromServer: 1}
     })
 
   // each subscriber becomes a listener
   let subscription = clientUpdatesStream.subscribe((action) => {
     console.log(`sending action upstream to ${connection.id}`, action.toJS())
-    added('serverActions', new Mongo.ObjectID(), action.toJS())
+    added('serverActions',
+      new Mongo.ObjectID(),
+      {...action.toJS(), meta: {fromServer: 1}}
+    )
   }, error)
 
   onStop(() => {

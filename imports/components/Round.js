@@ -1,4 +1,6 @@
 import React from 'react'
+import Actions from '/imports/store/actions'
+import { dispatchAction } from '/imports/methods/client/dispatchAction'
 
 export const Round = ({ question, judged }) => {
   if (!question) return null
@@ -9,7 +11,12 @@ export const Round = ({ question, judged }) => {
     Question {judged ? '(judged)' : '(open)'}: {prompt}
 
     <div className="voting">
-      {choices && choices.map(choice => (<button key={choice} className="vote">{choice}</button>))}
+      {choices.map(choice => (
+        <button
+          key={choice}
+          onClick={() => dispatchAction(Actions.Round.respond(choice))}
+          className="vote">{choice}</button>)
+      )}
 
     </div>
     </div>

@@ -1,6 +1,6 @@
 import { UniMethod } from 'meteor/deanius:uni-method'
 
-let handleDispatch = () => {}
+let clientSidePlaceholder = () => {}
 let preDispatch = (action) => {
   console.log(`Dispatching ${action.type} action to server`)
 }
@@ -8,7 +8,7 @@ let preDispatch = (action) => {
 export const { dispatchAction } = UniMethod.methods({
   dispatchAction: {
     clientStub: preDispatch,
-    serverMethod: handleDispatch
+    serverMethod: clientSidePlaceholder
   }
 })
 

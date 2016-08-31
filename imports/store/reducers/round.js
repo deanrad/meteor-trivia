@@ -30,5 +30,6 @@ let question = {
 
 export const actionReducers = {
   [begin]: (round) => round.set('question', question),
-  [judge]: (round) => round.set('judged', true)
+  [judge]: (round) => round.set('judged', true),
+  [respond]: (round, response) => round.update('responses', responses => responses.push(response))
 }
