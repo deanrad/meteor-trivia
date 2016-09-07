@@ -15,7 +15,7 @@
     "doc:client": "madge -j -f es6 -x 'server/|test|uni-method|meteor|immutable|redux-act|react|collections' imports/ | ruby scripts/tweak-deps.rb -x server/ | madge --stdin -i doc/deps-client.svg",
     "doc:server": "madge -j -f es6 -x 'client/|test|uni-method|meteor|immutable|redux-act|components' imports/ | ruby scripts/tweak-deps.rb -x client/ | madge --stdin -i doc/deps-server.svg",
     "doc:save": "madge -j -f es6 imports/ | ruby scripts/tweak-deps.rb | json_pp > doc/deps.json",
-    "doc:view": "open doc/*.png",
+    "doc:view": "open doc/*.svg",
     "doc:all": "npm run doc:save && npm run doc:client && npm run doc:server && npm run doc:view",
     "deploy": "test -f config/settings_production.json && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy meteor-trivia.meteorapp.com --settings config/settings_production.json || echo 'config/settings_production.json not found - aborting'"
   },

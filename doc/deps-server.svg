@@ -8,26 +8,26 @@
  viewBox="0.00 0.00 1861.62 411.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(7.992 403.992)">
 <title>G</title>
-<polygon fill="#000000" stroke="none" points="-7.992,7.992 -7.992,-403.992 1853.63,-403.992 1853.63,7.992 -7.992,7.992"/>
+<polygon fill="#ffffff" stroke="none" points="-7.992,7.992 -7.992,-403.992 1853.63,-403.992 1853.63,7.992 -7.992,7.992"/>
 <!-- collections -->
 <g id="node1" class="node"><title>collections</title>
-<ellipse fill="none" stroke="#cfffac" cx="94.1822" cy="-234" rx="54.5254" ry="18"/>
-<text text-anchor="middle" x="94.1822" y="-230.849" font-family="Arial" font-size="14.00" fill="#cfffac">collections</text>
+<ellipse fill="none" stroke="#000000" cx="94.1822" cy="-234" rx="54.5254" ry="18"/>
+<text text-anchor="middle" x="94.1822" y="-230.849" font-family="Arial" font-size="14.00" fill="#000000">collections</text>
 </g>
 <!-- methods/server/dispatchAction -->
 <g id="node2" class="node"><title>methods/server/dispatchAction</title>
-<ellipse fill="none" stroke="#cfffac" cx="668.182" cy="-306" rx="139.714" ry="18"/>
-<text text-anchor="middle" x="668.182" y="-302.849" font-family="Arial" font-size="14.00" fill="#cfffac">methods/server/dispatchAction</text>
+<ellipse fill="none" stroke="#000000" cx="668.182" cy="-306" rx="139.714" ry="18"/>
+<text text-anchor="middle" x="668.182" y="-302.849" font-family="Arial" font-size="14.00" fill="#000000">methods/server/dispatchAction</text>
 </g>
 <!-- server/listeners/dispatchConsequencesOfActions -->
 <g id="node3" class="node"><title>server/listeners/dispatchConsequencesOfActions</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="699.182" cy="-234" rx="216.147" ry="18"/>
-<text text-anchor="middle" x="699.182" y="-230.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/listeners/dispatchConsequencesOfActions</text>
+<ellipse fill="none" stroke="#111111" cx="699.182" cy="-234" rx="216.147" ry="18"/>
+<text text-anchor="middle" x="699.182" y="-230.849" font-family="Arial" font-size="14.00" fill="#111111">server/listeners/dispatchConsequencesOfActions</text>
 </g>
 <!-- server/streams/consequencesOfActions -->
 <g id="node4" class="node"><title>server/streams/consequencesOfActions</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="1018.18" cy="-162" rx="177.113" ry="18"/>
-<text text-anchor="middle" x="1018.18" y="-158.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/streams/consequencesOfActions</text>
+<ellipse fill="none" stroke="#111111" cx="1018.18" cy="-162" rx="177.113" ry="18"/>
+<text text-anchor="middle" x="1018.18" y="-158.849" font-family="Arial" font-size="14.00" fill="#111111">server/streams/consequencesOfActions</text>
 </g>
 <!-- server/listeners/dispatchConsequencesOfActions&#45;&gt;server/streams/consequencesOfActions -->
 <g id="edge1" class="edge"><title>server/listeners/dispatchConsequencesOfActions&#45;&gt;server/streams/consequencesOfActions</title>
@@ -36,8 +36,8 @@
 </g>
 <!-- server/mappers/actionToConsequences -->
 <g id="node11" class="node"><title>server/mappers/actionToConsequences</title>
-<ellipse fill="none" stroke="#cfffac" cx="844.182" cy="-90" rx="176.601" ry="18"/>
-<text text-anchor="middle" x="844.182" y="-86.8493" font-family="Arial" font-size="14.00" fill="#cfffac">server/mappers/actionToConsequences</text>
+<ellipse fill="none" stroke="#000000" cx="844.182" cy="-90" rx="176.601" ry="18"/>
+<text text-anchor="middle" x="844.182" y="-86.8493" font-family="Arial" font-size="14.00" fill="#000000">server/mappers/actionToConsequences</text>
 </g>
 <!-- server/streams/consequencesOfActions&#45;&gt;server/mappers/actionToConsequences -->
 <g id="edge15" class="edge"><title>server/streams/consequencesOfActions&#45;&gt;server/mappers/actionToConsequences</title>
@@ -46,8 +46,8 @@
 </g>
 <!-- server/streams/incomingClientActions -->
 <g id="node14" class="node"><title>server/streams/incomingClientActions</title>
-<ellipse fill="none" stroke="#cfffac" cx="1207.18" cy="-90" rx="168.28" ry="18"/>
-<text text-anchor="middle" x="1207.18" y="-86.8493" font-family="Arial" font-size="14.00" fill="#cfffac">server/streams/incomingClientActions</text>
+<ellipse fill="none" stroke="#000000" cx="1207.18" cy="-90" rx="168.28" ry="18"/>
+<text text-anchor="middle" x="1207.18" y="-86.8493" font-family="Arial" font-size="14.00" fill="#000000">server/streams/incomingClientActions</text>
 </g>
 <!-- server/streams/consequencesOfActions&#45;&gt;server/streams/incomingClientActions -->
 <g id="edge16" class="edge"><title>server/streams/consequencesOfActions&#45;&gt;server/streams/incomingClientActions</title>
@@ -56,8 +56,8 @@
 </g>
 <!-- server/listeners/writeActionsToMongo -->
 <g id="node5" class="node"><title>server/listeners/writeActionsToMongo</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="316.182" cy="-306" rx="166.651" ry="18"/>
-<text text-anchor="middle" x="316.182" y="-302.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/listeners/writeActionsToMongo</text>
+<ellipse fill="none" stroke="#111111" cx="316.182" cy="-306" rx="166.651" ry="18"/>
+<text text-anchor="middle" x="316.182" y="-302.849" font-family="Arial" font-size="14.00" fill="#111111">server/listeners/writeActionsToMongo</text>
 </g>
 <!-- server/listeners/writeActionsToMongo&#45;&gt;collections -->
 <g id="edge2" class="edge"><title>server/listeners/writeActionsToMongo&#45;&gt;collections</title>
@@ -66,8 +66,8 @@
 </g>
 <!-- server/streams/storeStateStream -->
 <g id="node6" class="node"><title>server/streams/storeStateStream</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="316.182" cy="-234" rx="149.022" ry="18"/>
-<text text-anchor="middle" x="316.182" y="-230.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/streams/storeStateStream</text>
+<ellipse fill="none" stroke="#111111" cx="316.182" cy="-234" rx="149.022" ry="18"/>
+<text text-anchor="middle" x="316.182" y="-230.849" font-family="Arial" font-size="14.00" fill="#111111">server/streams/storeStateStream</text>
 </g>
 <!-- server/listeners/writeActionsToMongo&#45;&gt;server/streams/storeStateStream -->
 <g id="edge3" class="edge"><title>server/listeners/writeActionsToMongo&#45;&gt;server/streams/storeStateStream</title>
@@ -76,8 +76,8 @@
 </g>
 <!-- store -->
 <g id="node15" class="node"><title>store</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="316.182" cy="-162" rx="31.9343" ry="18"/>
-<text text-anchor="middle" x="316.182" y="-158.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">store</text>
+<ellipse fill="none" stroke="#111111" cx="316.182" cy="-162" rx="31.9343" ry="18"/>
+<text text-anchor="middle" x="316.182" y="-158.849" font-family="Arial" font-size="14.00" fill="#111111">store</text>
 </g>
 <!-- server/streams/storeStateStream&#45;&gt;store -->
 <g id="edge17" class="edge"><title>server/streams/storeStateStream&#45;&gt;store</title>
@@ -86,8 +86,8 @@
 </g>
 <!-- server/main -->
 <g id="node7" class="node"><title>server/main</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="836.182" cy="-378" rx="59.9775" ry="18"/>
-<text text-anchor="middle" x="836.182" y="-374.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/main</text>
+<ellipse fill="none" stroke="#111111" cx="836.182" cy="-378" rx="59.9775" ry="18"/>
+<text text-anchor="middle" x="836.182" y="-374.849" font-family="Arial" font-size="14.00" fill="#111111">server/main</text>
 </g>
 <!-- server/main&#45;&gt;collections -->
 <g id="edge4" class="edge"><title>server/main&#45;&gt;collections</title>
@@ -111,8 +111,8 @@
 </g>
 <!-- server/publications/game -->
 <g id="node8" class="node"><title>server/publications/game</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="1351.18" cy="-306" rx="115.533" ry="18"/>
-<text text-anchor="middle" x="1351.18" y="-302.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/publications/game</text>
+<ellipse fill="none" stroke="#111111" cx="1351.18" cy="-306" rx="115.533" ry="18"/>
+<text text-anchor="middle" x="1351.18" y="-302.849" font-family="Arial" font-size="14.00" fill="#111111">server/publications/game</text>
 </g>
 <!-- server/main&#45;&gt;server/publications/game -->
 <g id="edge8" class="edge"><title>server/main&#45;&gt;server/publications/game</title>
@@ -121,8 +121,8 @@
 </g>
 <!-- server/publications/serverActions -->
 <g id="node9" class="node"><title>server/publications/serverActions</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="1068.18" cy="-306" rx="149.05" ry="18"/>
-<text text-anchor="middle" x="1068.18" y="-302.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/publications/serverActions</text>
+<ellipse fill="none" stroke="#111111" cx="1068.18" cy="-306" rx="149.05" ry="18"/>
+<text text-anchor="middle" x="1068.18" y="-302.849" font-family="Arial" font-size="14.00" fill="#111111">server/publications/serverActions</text>
 </g>
 <!-- server/main&#45;&gt;server/publications/serverActions -->
 <g id="edge9" class="edge"><title>server/main&#45;&gt;server/publications/serverActions</title>
@@ -131,8 +131,8 @@
 </g>
 <!-- server/startup/populateStoreFromMongo -->
 <g id="node10" class="node"><title>server/startup/populateStoreFromMongo</title>
-<ellipse fill="none" stroke="#cfffac" cx="1665.18" cy="-306" rx="180.416" ry="18"/>
-<text text-anchor="middle" x="1665.18" y="-302.849" font-family="Arial" font-size="14.00" fill="#cfffac">server/startup/populateStoreFromMongo</text>
+<ellipse fill="none" stroke="#000000" cx="1665.18" cy="-306" rx="180.416" ry="18"/>
+<text text-anchor="middle" x="1665.18" y="-302.849" font-family="Arial" font-size="14.00" fill="#000000">server/startup/populateStoreFromMongo</text>
 </g>
 <!-- server/main&#45;&gt;server/startup/populateStoreFromMongo -->
 <g id="edge10" class="edge"><title>server/main&#45;&gt;server/startup/populateStoreFromMongo</title>
@@ -141,8 +141,8 @@
 </g>
 <!-- server/publications/createPublication -->
 <g id="node12" class="node"><title>server/publications/createPublication</title>
-<ellipse fill="none" stroke="#cfffac" cx="1441.18" cy="-234" rx="164.462" ry="18"/>
-<text text-anchor="middle" x="1441.18" y="-230.849" font-family="Arial" font-size="14.00" fill="#cfffac">server/publications/createPublication</text>
+<ellipse fill="none" stroke="#000000" cx="1441.18" cy="-234" rx="164.462" ry="18"/>
+<text text-anchor="middle" x="1441.18" y="-230.849" font-family="Arial" font-size="14.00" fill="#000000">server/publications/createPublication</text>
 </g>
 <!-- server/publications/game&#45;&gt;server/publications/createPublication -->
 <g id="edge11" class="edge"><title>server/publications/game&#45;&gt;server/publications/createPublication</title>
@@ -156,8 +156,8 @@
 </g>
 <!-- server/streams/clientUpdatesStream -->
 <g id="node13" class="node"><title>server/streams/clientUpdatesStream</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="1096.18" cy="-234" rx="163.308" ry="18"/>
-<text text-anchor="middle" x="1096.18" y="-230.849" font-family="Arial" font-size="14.00" fill="#c6c5fe">server/streams/clientUpdatesStream</text>
+<ellipse fill="none" stroke="#111111" cx="1096.18" cy="-234" rx="163.308" ry="18"/>
+<text text-anchor="middle" x="1096.18" y="-230.849" font-family="Arial" font-size="14.00" fill="#111111">server/streams/clientUpdatesStream</text>
 </g>
 <!-- server/publications/serverActions&#45;&gt;server/streams/clientUpdatesStream -->
 <g id="edge13" class="edge"><title>server/publications/serverActions&#45;&gt;server/streams/clientUpdatesStream</title>
@@ -171,8 +171,8 @@
 </g>
 <!-- store/reducers/root -->
 <g id="node21" class="node"><title>store/reducers/root</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="316.182" cy="-90" rx="89.6971" ry="18"/>
-<text text-anchor="middle" x="316.182" y="-86.8493" font-family="Arial" font-size="14.00" fill="#c6c5fe">store/reducers/root</text>
+<ellipse fill="none" stroke="#111111" cx="316.182" cy="-90" rx="89.6971" ry="18"/>
+<text text-anchor="middle" x="316.182" y="-86.8493" font-family="Arial" font-size="14.00" fill="#111111">store/reducers/root</text>
 </g>
 <!-- store&#45;&gt;store/reducers/root -->
 <g id="edge26" class="edge"><title>store&#45;&gt;store/reducers/root</title>
@@ -181,13 +181,13 @@
 </g>
 <!-- store/actions -->
 <g id="node16" class="node"><title>store/actions</title>
-<ellipse fill="none" stroke="#c6c5fe" cx="507.182" cy="-90" rx="64.3793" ry="18"/>
-<text text-anchor="middle" x="507.182" y="-86.8493" font-family="Arial" font-size="14.00" fill="#c6c5fe">store/actions</text>
+<ellipse fill="none" stroke="#111111" cx="507.182" cy="-90" rx="64.3793" ry="18"/>
+<text text-anchor="middle" x="507.182" y="-86.8493" font-family="Arial" font-size="14.00" fill="#111111">store/actions</text>
 </g>
 <!-- store/reducers/advanceQuestion -->
 <g id="node17" class="node"><title>store/reducers/advanceQuestion</title>
-<ellipse fill="none" stroke="#cfffac" cx="780.182" cy="-18" rx="146.9" ry="18"/>
-<text text-anchor="middle" x="780.182" y="-14.8493" font-family="Arial" font-size="14.00" fill="#cfffac">store/reducers/advanceQuestion</text>
+<ellipse fill="none" stroke="#000000" cx="780.182" cy="-18" rx="146.9" ry="18"/>
+<text text-anchor="middle" x="780.182" y="-14.8493" font-family="Arial" font-size="14.00" fill="#000000">store/reducers/advanceQuestion</text>
 </g>
 <!-- store/actions&#45;&gt;store/reducers/advanceQuestion -->
 <g id="edge18" class="edge"><title>store/actions&#45;&gt;store/reducers/advanceQuestion</title>
@@ -196,8 +196,8 @@
 </g>
 <!-- store/reducers/game -->
 <g id="node18" class="node"><title>store/reducers/game</title>
-<ellipse fill="none" stroke="#cfffac" cx="97.1822" cy="-18" rx="97.3647" ry="18"/>
-<text text-anchor="middle" x="97.1822" y="-14.8493" font-family="Arial" font-size="14.00" fill="#cfffac">store/reducers/game</text>
+<ellipse fill="none" stroke="#000000" cx="97.1822" cy="-18" rx="97.3647" ry="18"/>
+<text text-anchor="middle" x="97.1822" y="-14.8493" font-family="Arial" font-size="14.00" fill="#000000">store/reducers/game</text>
 </g>
 <!-- store/actions&#45;&gt;store/reducers/game -->
 <g id="edge19" class="edge"><title>store/actions&#45;&gt;store/reducers/game</title>
@@ -206,8 +206,8 @@
 </g>
 <!-- store/reducers/reset -->
 <g id="node19" class="node"><title>store/reducers/reset</title>
-<ellipse fill="none" stroke="#cfffac" cx="307.182" cy="-18" rx="94.6194" ry="18"/>
-<text text-anchor="middle" x="307.182" y="-14.8493" font-family="Arial" font-size="14.00" fill="#cfffac">store/reducers/reset</text>
+<ellipse fill="none" stroke="#000000" cx="307.182" cy="-18" rx="94.6194" ry="18"/>
+<text text-anchor="middle" x="307.182" y="-14.8493" font-family="Arial" font-size="14.00" fill="#000000">store/reducers/reset</text>
 </g>
 <!-- store/actions&#45;&gt;store/reducers/reset -->
 <g id="edge20" class="edge"><title>store/actions&#45;&gt;store/reducers/reset</title>
@@ -216,8 +216,8 @@
 </g>
 <!-- store/reducers/round -->
 <g id="node20" class="node"><title>store/reducers/round</title>
-<ellipse fill="none" stroke="#cfffac" cx="517.182" cy="-18" rx="97.923" ry="18"/>
-<text text-anchor="middle" x="517.182" y="-14.8493" font-family="Arial" font-size="14.00" fill="#cfffac">store/reducers/round</text>
+<ellipse fill="none" stroke="#000000" cx="517.182" cy="-18" rx="97.923" ry="18"/>
+<text text-anchor="middle" x="517.182" y="-14.8493" font-family="Arial" font-size="14.00" fill="#000000">store/reducers/round</text>
 </g>
 <!-- store/actions&#45;&gt;store/reducers/round -->
 <g id="edge21" class="edge"><title>store/actions&#45;&gt;store/reducers/round</title>
