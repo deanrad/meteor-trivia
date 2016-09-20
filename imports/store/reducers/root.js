@@ -6,29 +6,46 @@ import * as Game from './game'
 
 let modeTransitions = {
   [['INIT', 'GAME_BEGIN']]: 'GAME_ON',
+  [['GAME_OVER', 'GAME_BEGIN']]: 'GAME_ON',
   [['GAME_ON', 'GAME_END']]: 'GAME_OVER'
 }
+
+let getNextMode = (state, action) => modeTransitions[[state, action.type]]
 
 let modeReducer = (state, action) => {
   if (!state) return 'INIT'
 
-  let nextMode = modeTransitions[[state, action.type]]
-  console.log(`mode transition ${state} -> ${nextMode}`)
+  let nextMode = getNextMode(state, action)
 
-  if (nextMode)
-    return nextMode
-  else
-    return state
+  return nextMode || state
 }
 
 // The magic! We define our state, and delegate control over its parts
 // to corresponding reducers
 let stateReducer = combineReducers({
   mode: modeReducer,
+  // TODO disallow changes to other reducers if modeReducer errors
   game: createReducer(Game.actionReducers, Game.initialState),
 })
 
-export default stateReducer
+let modalReducer = (state, action) => {
+  let mode = state && state.mode
+  let nextMode = getNextMode(mode, action)
+
+  if (!state) return stateReducer(state, action) // @@redux/INIT
+
+  // OK
+  if (nextMode) {
+    console.log(`mode transition ${mode} -> ${nextMode}`)
+    return stateReducer(state, action)
+  }
+
+  // Else NOOP - just log for now - no synchronous error desired
+  console.log(`Illegal mode transition on [${mode}, ${action.type}]`)
+  return state
+}
+
+export default modalReducer
 
 // export this so we can define an object suitable for insertion on startup
 export const initialStateTree = fromJS({
