@@ -7,4 +7,4 @@ store.subscribe(() => {
   state$.onNext(store.getState())
 })
 
-export default state$.asObservable().map(s => s.toJS())
+export default state$.asObservable()

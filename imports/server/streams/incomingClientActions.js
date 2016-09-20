@@ -4,6 +4,6 @@ import { fromJS } from 'immutable'
 let subject = new Rx.Subject()
 
 export const pushNext = (action) => {
-  subject.onNext(fromJS(action))
+  subject.onNext(action)
 }
 export default subject.asObservable()

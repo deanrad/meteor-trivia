@@ -19,11 +19,14 @@ export const initialState = {
 }
 
 let begin = createAction('GAME_BEGIN')
+let end = createAction('GAME_END')
 
 export const actionReducers = {
-  [begin]: (state) => state.set('status', 'game on!')
+  [begin]: (state) => ({...state, status: 'Game on!'}),
+  [end]: (state) => ({...state, status: 'Game over, man!'})
 }
 
 export const actions = {
-  begin
+  begin,
+  end
 }

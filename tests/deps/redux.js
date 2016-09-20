@@ -1,9 +1,12 @@
-/* eslint-disable */
 import { createStore } from 'redux'
-import { expect } from 'chai'
+import { assert, expect } from 'chai'
 
 describe('redux', function () {
-  let store = createStore((state = {}, action) => state)
+  let reducer = (state = {}, action) => {
+    if (action.type == 'ERROR') throw new Error('ERROR')
+    return state
+  }
+  let store = createStore(reducer)
 
   describe('subscribe', function () {
     let updateAmt
@@ -15,6 +18,18 @@ describe('redux', function () {
       let unsub2 = store.subscribe(() => {updateAmt += 2})
       store.dispatch({type: 'FOO'})
       expect(updateAmt).to.equal(3)
-    });
-  });
-});
+    })
+
+    it('should not notice errors', () => {
+      let unsub1 = store.subscribe(() => {updateAmt += 1})
+      try {
+        // dispatch will synchronously notice the error
+        store.dispatch({type: 'ERROR'})
+        assert(false)
+      } catch (e) {
+        assert(true)
+      }
+      expect(updateAmt).to.equal(0)
+    })
+  })
+})

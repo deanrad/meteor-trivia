@@ -7,7 +7,7 @@ import { connect, Provider } from 'react-redux'
 import { TriviaApp } from '../components/TriviaApp'
 import store from '../store/store'
 
-const ConnectedTriviaApp = connect(state => state.toJS())(TriviaApp)
+const ConnectedTriviaApp = connect(state => state)(TriviaApp)
 
 Meteor.startup(() => {
   ReactDOM.render(
