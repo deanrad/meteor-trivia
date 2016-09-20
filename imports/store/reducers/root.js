@@ -12,8 +12,8 @@ let modeTransitions = {
 let modeReducer = (state, action) => {
   if (!state) return 'INIT'
 
-  console.log('calculating next mode')
   let nextMode = modeTransitions[[state, action.type]]
+  console.log(`mode transition ${state} -> ${nextMode}`)
 
   if (nextMode)
     return nextMode

@@ -25,4 +25,8 @@ let updateMongo = (state, singletonId) => {
 // Try wrapping callbacks that you pass to non-Meteor libraries with Meteor.bindEnvironment
 
 // storeStateStream.subscribe(state => updateMongo(state, singletonId))
-storeStateStream.subscribe(state => Meteor.defer(() => { updateMongo(state, singletonId) }))
+// the first one is just initializing the store
+let alteredStates = storeStateStream.skip(1)
+alteredStates.subscribe(state => Meteor.defer(() => {
+  updateMongo(state, singletonId)
+}))

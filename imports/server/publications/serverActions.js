@@ -10,8 +10,8 @@ const meteorize = Meteor.bindEnvironment
 Meteor.publish('serverActions', function() {
   let client = this
 
-  console.log(`got subscriber ${client.connection.id}, sent state`,
-    JSON.stringify(store.getState()))
+  console.log('  --------------  ')
+  console.log(`got subscriber ${client.connection.id}, gave them RESET`)
 
   client.added('serverActions', new Mongo.ObjectID(),
     {
@@ -21,7 +21,7 @@ Meteor.publish('serverActions', function() {
     })
 
   incomingClientActions.subscribe(meteorize(action => {
-    console.log('sending upstream:', action)
+    console.log(`sending upstream: (${client.connection.id})`, action)
     client.added('serverActions', new Mongo.ObjectID(), action)
   }))
 
