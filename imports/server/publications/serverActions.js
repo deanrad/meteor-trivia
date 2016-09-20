@@ -20,6 +20,7 @@ Meteor.publish('serverActions', function() {
       meta: { fromServer: 1 }
     })
 
+  /* try inserting delay(1000) to simulate latency */
   incomingClientActions.subscribe(meteorize(action => {
     console.log(`sending upstream: (${client.connection.id})`, action)
     client.added('serverActions', new Mongo.ObjectID(), action)

@@ -1,6 +1,6 @@
 import { UniMethod } from 'meteor/deanius:uni-method'
 
-import { pushNext } from '/imports/server/streams/incomingClientActions'
+import { pushNext } from '../../server/streams/incomingClientActions'
 
 export const { dispatchAction } = UniMethod.define('dispatchAction', (action) => {
   console.log('  --------------  ')

@@ -1,10 +1,7 @@
 import './routes'
 
 import './subscribeServerActions'
-import './listeners/dispatchActions'
-import './redundantlySubscribeToGameUpdates'
-
-import '../methods/client/dispatchAction'
+import '/imports/client/listeners/dispatchServerActions'
 
 import Actions from '/imports/store/actions'
 

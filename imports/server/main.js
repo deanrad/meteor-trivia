@@ -3,8 +3,7 @@
 import { dispatchAction } from '../methods/server/dispatchAction'
 import serverActions from './publications/serverActions'
 
-import * as Collections from '../collections/collections'
 import populateStoreFromMongo from './startup/populateStoreFromMongo'
 
-import dispatchConsequencesOfActions from './listeners/dispatchConsequencesOfActions'
-import writeActionsToMongo from './listeners/writeActionsToMongo'
+import '/imports/server/listeners/dispatchConsequencesOfActions'
+import '/imports/server/listeners/writeActionsToMongo'

@@ -1,4 +1,4 @@
-import store from '/imports/store/store'
+import store from '../../store/store'
 import consequencesOfActions from '../streams/consequencesOfActions'
 
 consequencesOfActions.subscribe(action => {

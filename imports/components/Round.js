@@ -1,6 +1,6 @@
 import React from 'react'
-import Actions from '/imports/store/actions'
-import { dispatchAction } from '/imports/methods/client/dispatchAction'
+import { dispatchAction } from '../methods/client/dispatchAction'
+import Actions from '../store/actions'
 
 export const Round = ({ question, judged }) => {
   if (!question) return null
