@@ -1,5 +1,4 @@
 import Rx from 'rx'
-import { fromJS } from 'immutable'
 
 let subject = new Rx.Subject()
 

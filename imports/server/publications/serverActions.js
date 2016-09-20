@@ -1,6 +1,6 @@
+import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import store from '/imports/store/store'
-import { createPublication } from './createPublication'
 import incomingClientActions from '/imports/server/streams/incomingClientActions'
 
 const meteorize = Meteor.bindEnvironment
@@ -8,7 +8,7 @@ const meteorize = Meteor.bindEnvironment
 // Note - Mergebox will not publish events that are dupes of previous ones, thus the
 // inclusion of always-unique ObjectIDs on messages
 Meteor.publish('serverActions', function() {
-  var client = this
+  let client = this
 
   console.log(`got subscriber ${client.connection.id}, sent state`,
     JSON.stringify(store.getState()))
@@ -20,10 +20,10 @@ Meteor.publish('serverActions', function() {
       meta: { fromServer: 1 }
     })
 
-  incomingClientActions.subscribe(action => {
+  incomingClientActions.subscribe(meteorize(action => {
     console.log('sending upstream:', action)
     client.added('serverActions', new Mongo.ObjectID(), action)
-  })
+  }))
 
   client.ready()
 })

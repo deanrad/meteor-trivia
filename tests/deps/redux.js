@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createStore } from 'redux'
 import { assert, expect } from 'chai'
 

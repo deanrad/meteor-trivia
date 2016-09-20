@@ -22,8 +22,8 @@ let begin = createAction('GAME_BEGIN')
 let end = createAction('GAME_END')
 
 export const actionReducers = {
-  [begin]: (state) => ({...state, status: 'Game on!'}),
-  [end]: (state) => ({...state, status: 'Game over, man!'})
+  [begin]: (state) => ({ ...state, status: 'Game on!' }),
+  [end]: (state) => ({ ...state, status: 'Game over, man!' })
 }
 
 export const actions = {

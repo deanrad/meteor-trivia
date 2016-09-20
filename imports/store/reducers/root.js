@@ -1,12 +1,8 @@
 /* eslint {curly: 0, no-use-before-define:0, global-require:0, import/no-mutable-exports:0} */
 import { fromJS } from 'immutable'
-import { combineReducers as combineReducersImm } from 'redux-immutable'
 import { combineReducers } from 'redux'
 import { createReducer } from 'redux-act'
 import * as Game from './game'
-import * as Round from './round'
-import { resetAction, resetReducer } from './reset'
-import { advanceQuestionAction, advanceQuestionReducer } from './advanceQuestion'
 
 let modeTransitions = {
   [['INIT', 'GAME_BEGIN']]: 'GAME_ON',
@@ -17,7 +13,7 @@ let modeReducer = (state, action) => {
   if (!state) return 'INIT'
 
   console.log('calculating next mode')
-  let nextMode = modeTransitions[ [state, action.type] ]
+  let nextMode = modeTransitions[[state, action.type]]
 
   if (nextMode)
     return nextMode
