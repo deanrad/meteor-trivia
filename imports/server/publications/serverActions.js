@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
-import store from '/imports/store/store'
-import incomingClientActions from '/imports/server/streams/incomingClientActions'
+import store from '../../store/store'
+import consequencesOfActions from '../streams/consequencesOfActions'
 
 const meteorize = Meteor.bindEnvironment
 
@@ -21,7 +21,7 @@ Meteor.publish('serverActions', function() {
     })
 
   /* try inserting delay(1000) to simulate latency */
-  incomingClientActions.subscribe(meteorize(action => {
+  consequencesOfActions.subscribe(meteorize(action => {
     console.log(`sending upstream: (${client.connection.id})`, action)
     client.added('serverActions', new Mongo.ObjectID(), action)
   }))
