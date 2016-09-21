@@ -11,7 +11,7 @@ Meteor.publish('serverActions', function() {
   let client = this
 
   console.log('  --------------  ')
-  console.log(`got subscriber ${client.connection.id}, gave them RESET`)
+  console.log(`PUB> got subscriber ${client.connection.id}, gave them RESET`)
 
   client.added('serverActions', new Mongo.ObjectID(),
     {
@@ -22,7 +22,7 @@ Meteor.publish('serverActions', function() {
 
   /* try inserting delay(1000) to simulate latency */
   consequencesOfActions.subscribe(meteorize(action => {
-    console.log(`sending upstream: (${client.connection.id})`, action)
+    console.log(`PUB> sending upstream: (${client.connection.id})`, action.type)
     client.added('serverActions', new Mongo.ObjectID(), action)
   }))
 

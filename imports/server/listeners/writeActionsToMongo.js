@@ -2,21 +2,17 @@ import { Meteor } from 'meteor/meteor'
 import { Games } from '../../collections/collections'
 
 import storeStateStream from '../streams/storeStateStream'
-import { diff } from './mongoDiff'
+import { diff } from 'mongodb-diff'
 
 let singletonGame = Games.findOne()
 let singletonId = singletonGame && singletonGame._id
 
-let updateMongo = (state, singletonId) => {
-  console.log('Updating mongo game', singletonId)
+let updateMongo = (singletonId, diff) => {
+  console.log('DB> Updating mongo game', singletonId)
 
-  // XXX in future a more granular update could be produced off of the last two states
-  // for now we're just clobbering the whole mongo document - I suspect it's smart about
-  // doing the minimal thing internally and we'd only save network bandwidth/time by
-  // doing less
-  Games.update(singletonId, state)
+  Games.update(singletonId, diff)
 
-  console.log('Mongo updated', state, singletonId)
+  console.log('DB> Mongo updated', singletonId, diff)
 }
 
 // We want latencies from this listener not to block other listeners
@@ -27,21 +23,25 @@ let updateMongo = (state, singletonId) => {
 
 // Meteor.defer(fn) gets us there nicely.
 
-let allButFirst = storeStateStream.skip(1)
+// Sync Version
+// storeStateStream.bufferWithCount(2, 1).subscribe(buffer => {
+//   let [oldState, newState] = buffer
+//   updateMongo(singletonId, diff(oldState, newState))
+// })
 
-allButFirst.bufferWithCount(2, 1).subscribe(buffer => Meteor.defer(() => {
-  let [oldState, newState] = buffer
+// Mongo writes later
+storeStateStream
+  .bufferWithCount(2, 1)
+  .subscribe(buffer => Meteor.setTimeout(() =>{
+    let [oldState, newState] = buffer
+    updateMongo(singletonId, diff(oldState, newState))
+  }, 1000))
 
-  Promise.resolve()
-    .then(() => {
-      return diff(oldState, newState)
-    })
-    .then(delta => {
-      console.log('Diff', delta)
-      updateMongo(delta, singletonId)
-    })
-    .catch(e => console.log(e))
-  // console.log('The diff', d)
-
-  // TODO update with only the diff
-}))
+// Mongo writes periodically
+// storeStateStream
+//   .bufferWithCount(2, 1)
+//   .someCoolOperator()
+//   .subscribe(buffer => Meteor.setTimeout(() =>{
+//     let [oldState, newState] = buffer
+//     updateMongo(singletonId, diff(oldState, newState))
+//   }, 1000))
