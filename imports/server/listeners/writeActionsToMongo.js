@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import { Games } from '../../collections/collections'
 
 import storeStateStream from '../streams/storeStateStream'
+import { diff } from './mongoDiff'
 
 let singletonGame = Games.findOne()
 let singletonId = singletonGame && singletonGame._id
@@ -24,9 +25,23 @@ let updateMongo = (state, singletonId) => {
 // Error: Meteor code must always run within a Fiber.
 // Try wrapping callbacks that you pass to non-Meteor libraries with Meteor.bindEnvironment
 
-// storeStateStream.subscribe(state => updateMongo(state, singletonId))
-// the first one is just initializing the store
-let alteredStates = storeStateStream.skip(1)
-alteredStates.subscribe(state => Meteor.defer(() => {
-  updateMongo(state, singletonId)
+// Meteor.defer(fn) gets us there nicely.
+
+let allButFirst = storeStateStream.skip(1)
+
+allButFirst.bufferWithCount(2, 1).subscribe(buffer => Meteor.defer(() => {
+  let [oldState, newState] = buffer
+
+  Promise.resolve()
+    .then(() => {
+      return diff(oldState, newState)
+    })
+    .then(delta => {
+      console.log('Diff', delta)
+      updateMongo(delta, singletonId)
+    })
+    .catch(e => console.log(e))
+  // console.log('The diff', d)
+
+  // TODO update with only the diff
 }))

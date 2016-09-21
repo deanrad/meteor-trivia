@@ -22,7 +22,9 @@
   "dependencies": {
     "@deanius/thistle": "^1.0.1",
     "babel-preset-stage-2": "^6.13.0",
+    "deep-diff": "^0.3.4",
     "immutable": "^3.8.1",
+    "lodash": "^4.16.1",
     "meteor-node-stubs": "^0.2.3",
     "react": "^15.0.2",
     "react-addons-pure-render-mixin": "^15.0.2",
