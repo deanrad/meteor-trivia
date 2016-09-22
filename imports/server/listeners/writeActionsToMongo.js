@@ -24,18 +24,18 @@ let updateMongo = (singletonId, diff) => {
 // Meteor.defer(fn) gets us there nicely.
 
 // Sync Version
-// storeStateStream.bufferWithCount(2, 1).subscribe(buffer => {
-//   let [oldState, newState] = buffer
-//   updateMongo(singletonId, diff(oldState, newState))
-// })
+storeStateStream.bufferWithCount(2, 1).subscribe(buffer => {
+  let [oldState, newState] = buffer
+  updateMongo(singletonId, diff(oldState, newState))
+})
 
 // Mongo writes later
-storeStateStream
-  .bufferWithCount(2, 1)
-  .subscribe(buffer => Meteor.setTimeout(() =>{
-    let [oldState, newState] = buffer
-    updateMongo(singletonId, diff(oldState, newState))
-  }, 1000))
+// storeStateStream
+//   .bufferWithCount(2, 1)
+//   .subscribe(buffer => Meteor.setTimeout(() =>{
+//     let [oldState, newState] = buffer
+//     updateMongo(singletonId, diff(oldState, newState))
+//   }, 1000))
 
 // Mongo writes periodically
 // storeStateStream
