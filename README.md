@@ -19,3 +19,22 @@ Both the web application and its client publish a stream of events for the other
 
 * `npm run` - to view a list of tasks
 * `.githooks/pre-commit/quality.sh` - see the githooks that police commits
+
+# What can you do with it?
+
+This 2 line diff allows us to defer mongo writes for 1 second, while still retaining the responsiveness of our application to other clients.
+
+```diff
+-storeStateStream.bufferWithCount(2, 1).subscribe(buffer => {
++storeStateStream.bufferWithCount(2, 1).subscribe(buffer => Meteor.setTimeout(() =>{
+   let [oldState, newState] = buffer
+   updateMongo(singletonId, diff(oldState, newState))
+-})
++}, 1000)
+```
+
+
+
+# References
+- [RxJS](http://reactivex.io/) - a cross-platform stream-based library
+ 
