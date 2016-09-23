@@ -8,5 +8,5 @@ Both the web application and its client publish a stream of events for the other
 
 
 # Getting started
-`npm run` - to view a list of tasks
-`.githooks/pre-commit/quality.sh` - see the githooks that police commits
+* `npm run` - to view a list of tasks
+* `.githooks/pre-commit/quality.sh` - see the githooks that police commits
