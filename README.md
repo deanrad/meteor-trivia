@@ -37,4 +37,7 @@ This 2 line diff allows us to defer mongo writes for 1 second, while still retai
 
 # References
 - [RxJS](http://reactivex.io/) - a cross-platform stream-based library
- 
+- [ImmutableJS](https://facebook.github.io/immutable-js/) - a nice object manipulation library
+- [Redux](http://redux.js.org/) 
+- [Redux-Act](https://github.com/pauldijou/redux-act)
+
