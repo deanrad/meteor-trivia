@@ -16,7 +16,7 @@
 </g>
 <!-- methods/server/dispatchAction -->
 <g id="node2" class="node"><title>methods/server/dispatchAction</title>
-<ellipse fill="none" stroke="#111111" cx="1204.01" cy="-162" rx="139.714" ry="18"/>
+<ellipse fill="#E8ECF5" stroke="#111111" cx="1204.01" cy="-162" rx="139.714" ry="18"/>
 <text text-anchor="middle" x="1204.01" y="-158.849" font-family="Arial" font-size="14.00" fill="#111111">methods/server/dispatchAction</text>
 </g>
 <!-- server/streams/incomingClientActions -->
@@ -81,7 +81,7 @@
 </g>
 <!-- server/listeners/writeActionsToMongo -->
 <g id="node7" class="node"><title>server/listeners/writeActionsToMongo</title>
-<ellipse fill="#ee4444" stroke="#111111" cx="485.011" cy="-306" rx="166.651" ry="18"/>
+<ellipse fill="#ee6666" stroke="#111111" cx="485.011" cy="-306" rx="166.651" ry="18"/>
 <text text-anchor="middle" x="485.011" y="-302.849" font-family="Arial" font-size="14.00" fill="#111111">server/listeners/writeActionsToMongo</text>
 </g>
 <!-- server/listeners/writeActionsToMongo&#45;&gt;collections -->

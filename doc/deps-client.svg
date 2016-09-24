@@ -16,7 +16,7 @@
 </g>
 <!-- client/streams/serverActionsStream -->
 <g id="node2" class="node"><title>client/streams/serverActionsStream</title>
-<ellipse fill="none" stroke="#000000" cx="819.56" cy="-234" rx="158.916" ry="18"/>
+<ellipse fill="#E8ECF5" stroke="#000000" cx="819.56" cy="-234" rx="158.916" ry="18"/>
 <text text-anchor="middle" x="819.56" y="-230.849" font-family="Arial" font-size="14.00" fill="#000000">client/streams/serverActionsStream</text>
 </g>
 <!-- client/listeners/dispatchServerActions&#45;&gt;client/streams/serverActionsStream -->
@@ -111,7 +111,7 @@
 </g>
 <!-- methods/client/dispatchAction -->
 <g id="node9" class="node"><title>methods/client/dispatchAction</title>
-<ellipse fill="#ee4444" stroke="#000000" cx="312.56" cy="-90" rx="135.349" ry="18"/>
+<ellipse fill="#ee6666" stroke="#000000" cx="312.56" cy="-90" rx="135.349" ry="18"/>
 <text text-anchor="middle" x="312.56" y="-86.8493" font-family="Arial" font-size="14.00" fill="#000000">methods/client/dispatchAction</text>
 </g>
 <!-- components/Game&#45;&gt;methods/client/dispatchAction -->

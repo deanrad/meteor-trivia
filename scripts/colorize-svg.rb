@@ -9,8 +9,17 @@ se_nodes = [
   'methods/client/dispatchAction'
 ]
 
+source_nodes = [
+  'methods/server/dispatchAction',
+  'client/streams/serverActionsStream'
+]
+
 se_nodes.each do |n|
-  color.sub!(%r{<title>#{n}</title>\s+<ellipse fill="none"}, "<title>#{n}</title>\n<ellipse fill=\"#ee4444\"")
+  color.sub!(%r{<title>#{n}</title>\s+<ellipse fill="none"}, "<title>#{n}</title>\n<ellipse fill=\"#ee6666\"")
+end
+
+source_nodes.each do |n|
+  color.sub!(%r{<title>#{n}</title>\s+<ellipse fill="none"}, "<title>#{n}</title>\n<ellipse fill=\"#E8ECF5\"")
 end
 
 print color
