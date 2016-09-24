@@ -7,10 +7,10 @@ That stream of states is subscribed to by a difference engine, which calculates 
 Both the web application and its client publish a stream of events for the other side to observe.
 
 # Client Design
-![Client Dep Graph](doc/deps-client.svg)
+![Client Dep Graph](https://cdn.rawgit.com/deanius/meteor-trivia/master/doc/deps-client.svg)
 
 # Server Design
-![Server Dep Graph](doc/deps-server.svg)
+![Server Dep Graph](https://cdn.rawgit.com/deanius/meteor-trivia/master/doc/deps-server.svg)
 
 # Redux Architecture
 ![Arch](https://s3.amazonaws.com/www.deanius.com/images/React-Redux-Architecture.png)
