@@ -1,74 +1,73 @@
 {
-   "client/listeners/dispatchServerActions" : [
-      "client/streams/serverActionsStream",
-      "store"
+   "server/streams/consequencesOfActions" : [
+      "server/streams/incomingClientActions"
    ],
-   "server/streams/incomingClientActions" : [],
-   "server/listeners/dispatchConsequencesOfActions" : [
-      "server/streams/consequencesOfActions",
-      "store"
-   ],
+   "collections" : [],
    "store/reducers/reset" : [],
-   "components/TriviaApp" : [
-      "components/Game",
-      "components/Round"
-   ],
-   "server/streams/storeStateStream" : [
-      "store"
-   ],
-   "server/publications/serverActions" : [
-      "server/streams/consequencesOfActions",
-      "store"
-   ],
    "store/actions" : [
       "store/reducers/game",
       "store/reducers/reset"
    ],
-   "store/reducers/game" : [],
-   "client/subscribeServerActions" : [
-      "client/streams/serverActionsStream"
-   ],
-   "store" : [
-      "store/reducers/root"
-   ],
-   "methods/server/dispatchAction" : [
-      "server/streams/incomingClientActions"
+   "server/streams/storeStateStream" : [
+      "store"
    ],
    "client/main" : [
       "client/routes",
       "client/subscribeServerActions"
+   ],
+   "server/streams/incomingClientActions" : [],
+   "components/Game" : [
+      "methods/client/dispatchAction",
+      "store/actions"
+   ],
+   "store" : [
+      "store/reducers/root"
+   ],
+   "store/reducers/game" : [],
+   "test/spec.test" : [],
+   "server/listeners/dispatchConsequencesOfActions" : [
+      "server/streams/consequencesOfActions",
+      "store"
+   ],
+   "methods/client/dispatchAction" : [],
+   "components/Round" : [
+      "methods/client/dispatchAction",
+      "store/actions"
+   ],
+   "methods/server/dispatchAction" : [
+      "server/streams/incomingClientActions"
+   ],
+   "client/routes" : [
+      "components/TriviaApp",
+      "store"
+   ],
+   "server/startup/populateStoreFromMongo" : [],
+   "client/listeners/dispatchServerActions" : [
+      "client/streams/serverActionsStream",
+      "store"
+   ],
+   "components/TriviaApp" : [
+      "components/Game",
+      "components/Round"
    ],
    "server/main" : [
       "methods/server/dispatchAction",
       "server/publications/serverActions",
       "server/startup/populateStoreFromMongo"
    ],
-   "collections" : [],
+   "client/subscribeServerActions" : [
+      "client/streams/serverActionsStream"
+   ],
+   "store/reducers/root" : [
+      "store/reducers/game"
+   ],
+   "client/streams/serverActionsStream" : [],
    "server/listeners/writeActionsToMongo" : [
       "collections",
       "server/streams/storeStateStream"
    ],
-   "client/streams/serverActionsStream" : [],
-   "store/reducers/root" : [
-      "store/reducers/game"
-   ],
-   "methods/client/dispatchAction" : [],
-   "server/startup/populateStoreFromMongo" : [],
-   "components/Round" : [
-      "methods/client/dispatchAction",
-      "store/actions"
-   ],
-   "components/Game" : [
-      "methods/client/dispatchAction",
-      "store/actions"
-   ],
-   "client/routes" : [
-      "components/TriviaApp",
+   "server/publications/serverActions" : [
+      "server/streams/consequencesOfActions",
       "store"
-   ],
-   "server/streams/consequencesOfActions" : [
-      "server/streams/incomingClientActions",
-      "store/actions"
-   ],
-   "test/spec.test" : []
+   ]
 }
