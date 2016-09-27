@@ -7,7 +7,7 @@ let preDispatch = (action) => {
 
 export const { dispatchAction } = UniMethod.methods({
   dispatchAction: {
-    clientStub: preDispatch,
+    clientMethod: preDispatch,
     serverMethod: clientSidePlaceholder
   }
 })
