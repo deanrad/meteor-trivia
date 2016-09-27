@@ -10,21 +10,23 @@ const meteorize = Meteor.bindEnvironment
 Meteor.publish('serverActions', function() {
   let client = this
 
+  // Connection lifecycle
   console.log('  --------------  ')
   console.log(`PUB> got subscriber ${client.connection.id}, gave them RESET`)
+  client.onStop(() => console.log(`PUB> ddp subscriber ${client.connection.id} signed off`))
 
+  // Initial population
   client.added('serverActions', new Mongo.ObjectID(),
     {
       type: 'RESET',
       payload: store.getState(),
       meta: { fromServer: 1 }
     })
+  client.ready()
 
-  /* try inserting delay(1000) to simulate latency */
+  // Subscription to changes - try inserting delay(1000) for latency!
   consequencesOfActions.subscribe(meteorize(action => {
     console.log(`PUB> sending upstream: (${client.connection.id})`, action.type)
     client.added('serverActions', new Mongo.ObjectID(), action)
   }))
-
-  client.ready()
 })

@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor'
 import { Games } from '../../collections/collections'
 
 import storeStateStream from '../streams/storeStateStream'
