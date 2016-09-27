@@ -23,6 +23,7 @@
   "dependencies": {
     "@deanius/thistle": "^1.0.1",
     "babel-preset-stage-2": "^6.13.0",
+    "bcrypt": "^0.8.7",
     "deep-diff": "^0.3.4",
     "immutable": "^3.8.1",
     "lodash": "^4.16.1",
