@@ -19,14 +19,15 @@ Meteor.publish('serverActions', function() {
   client.added('serverActions', new Mongo.ObjectID(),
     {
       type: 'RESET',
-      payload: store.getState(),
+      payload: store.getState().toJS(),
       meta: { fromServer: 1 }
     })
   client.ready()
 
   // Subscription to changes - try inserting delay(1000) for latency!
-  consequencesOfActions.subscribe(meteorize(action => {
-    console.log(`PUB> sending upstream: (${client.connection.id})`, action.type)
-    client.added('serverActions', new Mongo.ObjectID(), action)
-  }))
+  consequencesOfActions
+    .subscribe(meteorize(action => {
+      console.log(`PUB> sending upstream: (${client.connection.id})`, action.type)
+      client.added('serverActions', new Mongo.ObjectID(), action)
+    }))
 })
