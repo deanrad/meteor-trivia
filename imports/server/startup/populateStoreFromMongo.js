@@ -1,6 +1,6 @@
+import { Meteor } from 'meteor/meteor'
 import store from '/imports/store/store'
 import { Games } from '/imports/collections/collections'
-import { Meteor } from 'meteor/meteor'
 import { resetAction } from '/imports/store/reducers/reset'
 
 import { initialStateTree } from '/imports/store/reducers/root'
