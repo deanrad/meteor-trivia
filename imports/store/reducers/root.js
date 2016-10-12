@@ -6,14 +6,8 @@ import * as Game from './game'
 
 // The magic! We define our state, and delegate control over its parts
 // to corresponding reducers
-let stateReducer = combineReducers({
+const stateReducer = combineReducers({
   game: createReducer(Game.actionReducers, fromJS(Game.initialState))
 })
 
 export default stateReducer
-
-// export this so we can define an object suitable for insertion on startup
-export const initialStateTree = fromJS({
-  mode: 'INIT',
-  game: Game.initialState
-})

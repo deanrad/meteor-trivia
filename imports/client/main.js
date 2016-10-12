@@ -1,6 +1,6 @@
 import './routes'
 
-import './subscribeServerActions'
+import './subscribeProcessedActions'
 import '/imports/client/listeners/dispatchServerActions'
 
 import Actions from '/imports/store/actions'

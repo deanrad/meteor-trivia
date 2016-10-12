@@ -19,16 +19,16 @@ Meteor.atServer(() => {
     it('should be available as a DDP method', () => {
       expect(Object.keys(Meteor.server.method_handlers)).to.include('dispatchAction')
     })
-    it('should put objects received from this method onto incomingClientActions stream')
+    it('should put objects received from this method onto dispatchedActions stream')
   })
 })
 
 Meteor.atServer(() => {
-  describe('incomingClientActions', () => {
+  describe('dispatchedActions', () => {
     it('contains actions which came from our clients')
   })
   describe('clientUpdatesStream', () => {
-    it('is derived from incomingClientActions')
+    it('is derived from dispatchedActions')
     it('contains the updates to push out to all clients')
     it('filters correctAnswers from outgoing messages')
   })
@@ -41,7 +41,7 @@ Meteor.atClient(() => {
   })
 })
 Meteor.atServer(() => {
-  describe('serverActions publication', () => {
+  describe('processedActions publication', () => {
     it('is published')
     it('publishes events from clientUpdatesStream')
     it('publishes the server state to newly connected clients')
@@ -77,6 +77,7 @@ describe('Actions', () => {
   Meteor.atClient(() => {
     describe('#meta', () => {
       it('can have optimistic:true to force dispatch on the client before server')
+      it('has a store property with fields id, collection')
     })
   })
 })

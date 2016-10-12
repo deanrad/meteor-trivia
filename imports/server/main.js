@@ -1,9 +1,5 @@
-/* eslint no-unused-vars:0 */
+import '../methods/server/dispatchAction'
+import './publications/processedActions'
 
-import { dispatchAction } from '../methods/server/dispatchAction'
-import serverActions from './publications/serverActions'
-
-import populateStoreFromMongo from './startup/populateStoreFromMongo'
-
-import '/imports/server/listeners/dispatchConsequencesOfActions'
-import '/imports/server/listeners/writeActionsToMongo'
+// absolute paths dont appear on dependency graphs, these are just for startup
+import '/imports/server/listeners/dispatchActionsToStore'

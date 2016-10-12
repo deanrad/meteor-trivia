@@ -4,17 +4,17 @@ svg = STDIN.read
 # color = svg.gsub!( /none/, '#ee2222')
 color = svg
 
-se_nodes = [
-  'server/listeners/writeActionsToMongo',
-  'methods/client/dispatchAction'
+side_effect_nodes = [
+  'methods/client/dispatchAction',
+  'server/publications/processedActions'
 ]
 
 source_nodes = [
   'methods/server/dispatchAction',
-  'client/streams/serverActionsStream'
+  'client/subscribeProcessedActions'
 ]
 
-se_nodes.each do |n|
+side_effect_nodes.each do |n|
   color.sub!(%r{<title>#{n}</title>\s+<ellipse fill="none"}, "<title>#{n}</title>\n<ellipse fill=\"#ee6666\"")
 end
 
