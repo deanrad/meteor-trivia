@@ -1,4 +1,4 @@
-import './routes'
+import './router'
 
 import './subscribeProcessedActions'
 import '/imports/client/listeners/dispatchServerActions'

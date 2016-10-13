@@ -1,62 +1,64 @@
 {
-   "client/subscribeProcessedActions" : [
-      "client/streams/serverActionsStream"
-   ],
-   "client/routes" : [
-      "components/TriviaApp",
-      "store"
+   "test/spec.test" : [],
+   "store/reducers/root" : [
+      "store/reducers/game"
    ],
    "client/streams/serverActionsStream" : [],
-   "client/listeners/dispatchServerActions" : [
-      "client/streams/serverActionsStream",
-      "store"
-   ],
-   "methods/client/dispatchAction" : [],
    "store/actions" : [
       "store/reducers/game",
       "store/reducers/root"
    ],
-   "server/publications/processedActions" : [
-      "server/streams/dispatchedActions",
+   "client/listeners/dispatchServerActions" : [
+      "client/streams/serverActionsStream",
       "store"
-   ],
-   "server/streams/dispatchedActions" : [],
-   "store/reducers/root" : [
-      "store/reducers/game"
-   ],
-   "store" : [
-      "store/reducers/root"
-   ],
-   "server/listeners/dispatchActionsToStore" : [
-      "server/streams/dispatchedActions",
-      "store"
-   ],
-   "components/TriviaApp" : [
-      "components/Game",
-      "components/Round"
-   ],
-   "client/main" : [
-      "client/routes",
-      "client/subscribeProcessedActions"
-   ],
-   "server/main" : [
-      "methods/server/dispatchAction",
-      "server/publications/processedActions"
    ],
    "components/Round" : [
       "methods/client/dispatchAction",
       "store/actions"
    ],
-   "server/streams/storeStateStream" : [
+   "client/main" : [
+      "client/router",
+      "client/subscribeProcessedActions"
+   ],
+   "server/publications/processedActions" : [
+      "server/streams/dispatchedActions",
+      "store"
+   ],
+   "server/main" : [
+      "methods/server/dispatchAction",
+      "server/listeners/dispatchActionsToStore",
+      "server/publications/processedActions",
+      "server/streams/storeStateStream"
+   ],
+   "server/streams/dispatchedActions" : [],
+   "server/listeners/dispatchActionsToStore" : [
+      "server/streams/dispatchedActions",
       "store"
    ],
    "store/reducers/game" : [],
+   "methods/client/dispatchAction" : [],
+   "store" : [
+      "store/reducers/root"
+   ],
+   "client/subscribeProcessedActions" : [
+      "client/streams/serverActionsStream"
+   ],
    "methods/server/dispatchAction" : [
       "server/streams/dispatchedActions"
+   ],
+   "server/streams/storeStateStream" : [
+      "store"
    ],
    "components/Game" : [
       "methods/client/dispatchAction",
       "store/actions"
    ],
-   "test/spec.test" : []
+   "components/TriviaApp" : [
+      "components/Game",
+      "components/Round"
+   ],
+   "client/router" : [
+      "components/TriviaApp",
+      "store"
+   ]
 }

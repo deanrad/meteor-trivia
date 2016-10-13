@@ -50,19 +50,24 @@
 <text text-anchor="middle" x="832.607" y="-86.8493" font-family="Arial" font-size="14.00" fill="#111111">store/reducers/root</text>
 </g>
 <!-- store&#45;&gt;store/reducers/root -->
-<g id="edge12" class="edge"><title>store&#45;&gt;store/reducers/root</title>
+<g id="edge14" class="edge"><title>store&#45;&gt;store/reducers/root</title>
 <path fill="none" stroke="#757575" d="M832.607,-143.697C832.607,-135.983 832.607,-126.712 832.607,-118.112"/>
 <polygon fill="#757575" stroke="#757575" points="836.107,-118.104 832.607,-108.104 829.107,-118.104 836.107,-118.104"/>
 </g>
 <!-- server/main -->
 <g id="node5" class="node"><title>server/main</title>
-<ellipse fill="none" stroke="#111111" cx="485.607" cy="-306" rx="59.9775" ry="18"/>
-<text text-anchor="middle" x="485.607" y="-302.849" font-family="Arial" font-size="14.00" fill="#111111">server/main</text>
+<ellipse fill="none" stroke="#111111" cx="652.607" cy="-306" rx="59.9775" ry="18"/>
+<text text-anchor="middle" x="652.607" y="-302.849" font-family="Arial" font-size="14.00" fill="#111111">server/main</text>
 </g>
 <!-- server/main&#45;&gt;methods/server/dispatchAction -->
 <g id="edge4" class="edge"><title>server/main&#45;&gt;methods/server/dispatchAction</title>
-<path fill="none" stroke="#757575" d="M437.133,-295.193C381.231,-283.884 288.428,-265.108 221.314,-251.53"/>
-<polygon fill="#757575" stroke="#757575" points="221.685,-248.035 211.19,-249.482 220.297,-254.896 221.685,-248.035"/>
+<path fill="none" stroke="#757575" d="M599.159,-297.707C514.796,-286.195 349.317,-263.615 241.664,-248.926"/>
+<polygon fill="#757575" stroke="#757575" points="242.136,-245.458 231.755,-247.574 241.19,-252.394 242.136,-245.458"/>
+</g>
+<!-- server/main&#45;&gt;server/listeners/dispatchActionsToStore -->
+<g id="edge5" class="edge"><title>server/main&#45;&gt;server/listeners/dispatchActionsToStore</title>
+<path fill="none" stroke="#757575" d="M617.474,-291.337C591.07,-281.069 554.479,-266.839 524.678,-255.25"/>
+<polygon fill="#757575" stroke="#757575" points="525.851,-251.951 515.263,-251.588 523.314,-258.475 525.851,-251.951"/>
 </g>
 <!-- server/publications/processedActions -->
 <g id="node6" class="node"><title>server/publications/processedActions</title>
@@ -70,27 +75,32 @@
 <text text-anchor="middle" x="832.607" y="-230.849" font-family="Arial" font-size="14.00" fill="#111111">server/publications/processedActions</text>
 </g>
 <!-- server/main&#45;&gt;server/publications/processedActions -->
-<g id="edge5" class="edge"><title>server/main&#45;&gt;server/publications/processedActions</title>
-<path fill="none" stroke="#757575" d="M533.856,-295.267C589.032,-284.136 680.395,-265.706 747.585,-252.151"/>
-<polygon fill="#757575" stroke="#757575" points="748.623,-255.513 757.734,-250.104 747.239,-248.651 748.623,-255.513"/>
-</g>
-<!-- server/publications/processedActions&#45;&gt;server/streams/dispatchedActions -->
-<g id="edge6" class="edge"><title>server/publications/processedActions&#45;&gt;server/streams/dispatchedActions</title>
-<path fill="none" stroke="#757575" d="M755.378,-217.983C697.351,-206.7 617.895,-191.25 557.982,-179.601"/>
-<polygon fill="#757575" stroke="#757575" points="558.649,-176.165 548.165,-177.692 557.313,-183.036 558.649,-176.165"/>
-</g>
-<!-- server/publications/processedActions&#45;&gt;store -->
-<g id="edge7" class="edge"><title>server/publications/processedActions&#45;&gt;store</title>
-<path fill="none" stroke="#757575" d="M832.607,-215.697C832.607,-207.983 832.607,-198.712 832.607,-190.112"/>
-<polygon fill="#757575" stroke="#757575" points="836.107,-190.104 832.607,-180.104 829.107,-190.104 836.107,-190.104"/>
+<g id="edge6" class="edge"><title>server/main&#45;&gt;server/publications/processedActions</title>
+<path fill="none" stroke="#757575" d="M687.74,-291.337C714.236,-281.033 750.991,-266.74 780.848,-255.128"/>
+<polygon fill="#757575" stroke="#757575" points="782.226,-258.348 790.278,-251.461 779.689,-251.824 782.226,-258.348"/>
 </g>
 <!-- server/streams/storeStateStream -->
 <g id="node7" class="node"><title>server/streams/storeStateStream</title>
 <ellipse fill="none" stroke="#111111" cx="1165.61" cy="-234" rx="149.022" ry="18"/>
 <text text-anchor="middle" x="1165.61" y="-230.849" font-family="Arial" font-size="14.00" fill="#111111">server/streams/storeStateStream</text>
 </g>
+<!-- server/main&#45;&gt;server/streams/storeStateStream -->
+<g id="edge7" class="edge"><title>server/main&#45;&gt;server/streams/storeStateStream</title>
+<path fill="none" stroke="#757575" d="M706.055,-297.707C789.671,-286.297 952.974,-264.014 1060.68,-249.318"/>
+<polygon fill="#757575" stroke="#757575" points="1061.16,-252.784 1070.6,-247.964 1060.22,-245.848 1061.16,-252.784"/>
+</g>
+<!-- server/publications/processedActions&#45;&gt;server/streams/dispatchedActions -->
+<g id="edge8" class="edge"><title>server/publications/processedActions&#45;&gt;server/streams/dispatchedActions</title>
+<path fill="none" stroke="#757575" d="M755.378,-217.983C697.351,-206.7 617.895,-191.25 557.982,-179.601"/>
+<polygon fill="#757575" stroke="#757575" points="558.649,-176.165 548.165,-177.692 557.313,-183.036 558.649,-176.165"/>
+</g>
+<!-- server/publications/processedActions&#45;&gt;store -->
+<g id="edge9" class="edge"><title>server/publications/processedActions&#45;&gt;store</title>
+<path fill="none" stroke="#757575" d="M832.607,-215.697C832.607,-207.983 832.607,-198.712 832.607,-190.112"/>
+<polygon fill="#757575" stroke="#757575" points="836.107,-190.104 832.607,-180.104 829.107,-190.104 836.107,-190.104"/>
+</g>
 <!-- server/streams/storeStateStream&#45;&gt;store -->
-<g id="edge8" class="edge"><title>server/streams/storeStateStream&#45;&gt;store</title>
+<g id="edge10" class="edge"><title>server/streams/storeStateStream&#45;&gt;store</title>
 <path fill="none" stroke="#757575" d="M1094.58,-218.069C1026.57,-203.773 926.458,-182.729 871.784,-171.235"/>
 <polygon fill="#757575" stroke="#757575" points="872.306,-167.769 861.8,-169.137 870.866,-174.619 872.306,-167.769"/>
 </g>
@@ -105,17 +115,17 @@
 <text text-anchor="middle" x="773.607" y="-14.8493" font-family="Arial" font-size="14.00" fill="#000000">store/reducers/game</text>
 </g>
 <!-- store/actions&#45;&gt;store/reducers/game -->
-<g id="edge9" class="edge"><title>store/actions&#45;&gt;store/reducers/game</title>
+<g id="edge11" class="edge"><title>store/actions&#45;&gt;store/reducers/game</title>
 <path fill="none" stroke="#757575" d="M717.561,-143.915C719.109,-125.475 723.143,-95.5812 733.607,-72 738.025,-62.0425 744.632,-52.2144 751.21,-43.777"/>
 <polygon fill="#757575" stroke="#757575" points="754.072,-45.8059 757.696,-35.8499 748.654,-41.3732 754.072,-45.8059"/>
 </g>
 <!-- store/actions&#45;&gt;store/reducers/root -->
-<g id="edge10" class="edge"><title>store/actions&#45;&gt;store/reducers/root</title>
+<g id="edge12" class="edge"><title>store/actions&#45;&gt;store/reducers/root</title>
 <path fill="none" stroke="#757575" d="M742.351,-145.465C758.38,-135.792 779.228,-123.212 796.848,-112.579"/>
 <polygon fill="#757575" stroke="#757575" points="798.972,-115.385 805.725,-107.222 795.355,-109.392 798.972,-115.385"/>
 </g>
 <!-- store/reducers/root&#45;&gt;store/reducers/game -->
-<g id="edge11" class="edge"><title>store/reducers/root&#45;&gt;store/reducers/game</title>
+<g id="edge13" class="edge"><title>store/reducers/root&#45;&gt;store/reducers/game</title>
 <path fill="none" stroke="#757575" d="M818.325,-72.055C811.255,-63.6679 802.581,-53.376 794.759,-44.0963"/>
 <polygon fill="#757575" stroke="#757575" points="797.288,-41.6659 788.167,-36.2753 791.936,-46.1773 797.288,-41.6659"/>
 </g>
