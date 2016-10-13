@@ -23,6 +23,7 @@
   "dependencies": {
     "@deanius/thistle": "^1.0.1",
     "babel-preset-stage-2": "^6.13.0",
+    "babel-runtime": "^6.11.6",
     "bcrypt": "^0.8.7",
     "deep-diff": "^0.3.4",
     "immutable": "^3.8.1",
@@ -39,7 +40,6 @@
     "redux": "^3.5.2",
     "redux-act": "^0.5.0",
     "redux-immutable": "^3.0.6",
-    "redux-machine": "^1.1.1",
     "redux-thunk": "^2.1.0",
     "rx": "^4.1.0",
     "xstream": "^5.2.1"
