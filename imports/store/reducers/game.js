@@ -3,19 +3,7 @@ import { createAction } from 'redux-act'
 export const initialState = {
   title: 'Meteor Redux Trivia',
   players: [],
-  status: 'awaiting players',
-  questions: [
-    {
-      prompt: 'Meteor had which earlier name?',
-      choices: [
-        'Asteroid',
-        'Dinosaur',
-        'Skybreak',
-        'Skynet'
-      ],
-      correctAnswer: 'Skybreak'
-    }
-  ]
+  status: 'awaiting players'
 }
 
 let begin = createAction('GAME_BEGIN')

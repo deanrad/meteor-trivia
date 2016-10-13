@@ -3,11 +3,13 @@ import { fromJS } from 'immutable'
 import { combineReducers } from 'redux-immutable'
 import { createReducer } from 'redux-act'
 import * as Game from './game'
+import * as Round from './round'
 
 // The magic! We define our state, and delegate control over its parts
 // to corresponding reducers
 const stateReducer = combineReducers({
-  game: createReducer(Game.actionReducers, fromJS(Game.initialState))
+  game: createReducer(Game.actionReducers, fromJS(Game.initialState)),
+  round: createReducer(Round.actionReducers, fromJS(Round.initialState))
 })
 
 export default stateReducer

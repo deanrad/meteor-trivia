@@ -7,5 +7,9 @@ export const Game = ({ title, status }) => (
     <h1>Game:{ title } ({ status })</h1>
     <button onClick={() => dispatchAction(Actions.Game.begin()) }>Begin Game</button>
     <button onClick={() => dispatchAction(Actions.Game.end()) }>End Game</button>
+    <br/>
+    <button onClick={() => dispatchAction(Actions.Round.begin()) }>Begin Round</button>
+    <button onClick={() => dispatchAction(Actions.Round.judge('closed')) }>Close Round To Answers</button>
+    <button onClick={() => dispatchAction(Actions.Round.credit(1)) }>Give Credit (1)</button>
   </div>
 )
