@@ -1,6 +1,8 @@
 import { fromJS } from 'immutable'
 import { createReducer } from 'redux-act'
 
+// Adds a field called state, and updates it or invokes `onInvalidTransition`
+// when asked to transition states
 export const createStatefulImmutableReducer = ({
   actionReducers, initialState, allowedTransitions, onInvalidTransition
 }) => {
