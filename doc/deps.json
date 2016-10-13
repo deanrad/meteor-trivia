@@ -1,27 +1,27 @@
 {
    "test/spec.test" : [],
-   "store/reducers/root" : [
-      "store/reducers/game"
-   ],
-   "client/streams/serverActionsStream" : [],
-   "store/actions" : [
-      "store/reducers/game",
-      "store/reducers/root"
-   ],
-   "client/listeners/dispatchServerActions" : [
-      "client/streams/serverActionsStream",
+   "server/publications/processedActions" : [
+      "server/streams/dispatchedActions",
       "store"
    ],
+   "store" : [
+      "store/reducers/root"
+   ],
+   "store/reducers/round" : [],
    "components/Round" : [
       "methods/client/dispatchAction",
       "store/actions"
    ],
-   "client/main" : [
-      "client/router",
-      "client/subscribeProcessedActions"
+   "store/reducers/root" : [
+      "store/reducers/game",
+      "store/reducers/round"
    ],
-   "server/publications/processedActions" : [
-      "server/streams/dispatchedActions",
+   "client/subscribeProcessedActions" : [
+      "client/streams/serverActionsStream"
+   ],
+   "methods/client/dispatchAction" : [],
+   "client/router" : [
+      "components/TriviaApp",
       "store"
    ],
    "server/main" : [
@@ -30,35 +30,41 @@
       "server/publications/processedActions",
       "server/streams/storeStateStream"
    ],
-   "server/streams/dispatchedActions" : [],
-   "server/listeners/dispatchActionsToStore" : [
-      "server/streams/dispatchedActions",
-      "store"
-   ],
-   "store/reducers/game" : [],
-   "methods/client/dispatchAction" : [],
-   "store" : [
-      "store/reducers/root"
-   ],
-   "client/subscribeProcessedActions" : [
-      "client/streams/serverActionsStream"
-   ],
-   "methods/server/dispatchAction" : [
-      "server/streams/dispatchedActions"
-   ],
-   "server/streams/storeStateStream" : [
-      "store"
+   "store/actions" : [
+      "store/reducers/game",
+      "store/reducers/root",
+      "store/reducers/round"
    ],
    "components/Game" : [
       "methods/client/dispatchAction",
       "store/actions"
    ],
+   "store/reducers/game" : [
+      "store/reducers/createStatefulImmutableReducer"
+   ],
+   "server/listeners/dispatchActionsToStore" : [
+      "server/streams/dispatchedActions",
+      "store"
+   ],
+   "methods/server/dispatchAction" : [
+      "server/streams/dispatchedActions"
+   ],
    "components/TriviaApp" : [
       "components/Game",
       "components/Round"
    ],
-   "client/router" : [
-      "components/TriviaApp",
+   "store/reducers/createStatefulImmutableReducer" : [],
+   "client/main" : [
+      "client/router",
+      "client/subscribeProcessedActions"
+   ],
+   "server/streams/storeStateStream" : [
+      "store"
+   ],
+   "server/streams/dispatchedActions" : [],
+   "client/streams/serverActionsStream" : [],
+   "client/listeners/dispatchServerActions" : [
+      "client/streams/serverActionsStream",
       "store"
    ]
 }
