@@ -1,4 +1,4 @@
-import { fromJS } from 'immutable'
+import { fromJS, Map } from 'immutable'
 import { createAction, createReducer } from 'redux-act'
 
 const begin = createAction('ROUND_BEGIN')
@@ -47,7 +47,8 @@ const actionReducers = {
       'F'
     ],
     correctAnswer: 'F'
-  })
+  }),
+  GAME_END: () => { return new Map() }
 }
 
 export default createReducer(actionReducers, fromJS(initialState))
