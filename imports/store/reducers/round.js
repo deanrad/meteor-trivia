@@ -54,7 +54,9 @@ const actionReducers = {
     ],
     correctAnswer: 'F'
   })),
-  [narrow]: (round) => round.update('question', question => question && question.update('choices', choices => choices.shift())),
+  [narrow]: (round) => round.update('question', question =>
+      question && question.update('choices', choices =>
+        choices.shift())),
   GAME_END: () => { return new Map() }
 }
 

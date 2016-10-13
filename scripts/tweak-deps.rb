@@ -17,6 +17,11 @@ deps = JSON.parse(STDIN.read)
 #     "store/store":["../node_modules/redux/lib/index","store/reducers/root"]
 # }
 
+# Add those we cant import due to weird isomorphic stuff
+if deps['server/main']
+  deps['store/store'] << 'server/streams/expandedActions'
+end
+
 noMeteor = Proc.new { |dep|
     dep.sub '../meteor/', ''
 }

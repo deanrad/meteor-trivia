@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor'
+import { _ } from 'meteor/underscore'
 import { createStore, applyMiddleware } from 'redux'
 import { Map } from 'immutable'
-import thunk from 'redux-thunk'
 import rootReducer from './reducers/root'
-import * as Round from './reducers/round'
+import * as RoundEpics from './epics/round'
 
 let storeFactory = createStore
 
@@ -13,29 +13,17 @@ if (Meteor.isClient) {
   }
 }
 
-// A 'Business Logic' Redux middleware which can dispatch new actions
-const hinter = ({ dispatch }) => (next) => (action) => {
-
-  // process the action normally
-  let result = next(action)
-
-  // dispatch any additional side effects, even if async..
-  if (action.type === 'ROUND_HINT_NARROW') {
-    result = dispatch(Round.actions.narrow())
-  }
-
-  // return whatever you want, usually the last result
-  return result
-}
-
 // client and server include these middlewares,
-const middlewares = [thunk, hinter]
+const middlewares = [...(_.values(RoundEpics))]
 
+// As the last middleware in the stack, allows you to see 'expanded' stream of actions,
+// Useful for when middlewares alter the incoming stream of actions
 const maybeAddServerMiddlewares = () => {
   if (Meteor.isServer) {
-    // allow you to use redux-thunk or similar, and see 'expanded' stream of actions
-    import { pushNext } from '../server/streams/expandedActions'
+    // eslint-disable-next-line global-require
+    let { pushNext } = require('../server/streams/expandedActions')
 
+    // eslint-disable-next-line no-unused-vars
     const streamer = store => next => action => {
       pushNext(action)
       return next(action)
