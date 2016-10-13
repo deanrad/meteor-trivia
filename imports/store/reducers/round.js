@@ -7,6 +7,10 @@ const judge = createAction('ROUND_JUDGE')
 const credit = createAction('ROUND_CREDIT')
 const advance = createAction('ROUND_ADVANCE')
 
+// the user creates asking for a hint
+const hintNarrow = createAction('ROUND_HINT_NARROW')
+const narrow = createAction('ROUND_NARROW')
+
 export const initialState = {
   question: undefined,
   outcome: undefined,
@@ -21,11 +25,13 @@ export const actions = {
   respond,
   judge,
   credit,
-  advance
+  advance,
+  hintNarrow,
+  narrow
 }
 
 const actionReducers = {
-  [begin]: (round) => round.set('question', {
+  [begin]: (round) => round.set('question', fromJS({
     prompt: 'Meteor had which earlier name?',
     choices: [
       'Asteroid',
@@ -34,11 +40,11 @@ const actionReducers = {
       'Skynet'
     ],
     correctAnswer: 'Skybreak'
-  }),
+  })),
   [respond]: (round, response) => round.setIn(['client', 'response'], response),
   [judge]: (round, outcome) => round.set('outcome', outcome),
   [credit]: (round, credit) => round.updateIn(['client', 'credit'], (old = 0) => (old + credit)),
-  [advance]: (round) => round.mergeIn(['question'], {
+  [advance]: (round) => round.mergeIn(['question'], fromJS({
     prompt: 'What the?',
     choices: [
       'C',
@@ -47,7 +53,8 @@ const actionReducers = {
       'F'
     ],
     correctAnswer: 'F'
-  }),
+  })),
+  [narrow]: (round) => round.update('question', question => question.update('choices', choices => choices.shift())),
   GAME_END: () => { return new Map() }
 }
 

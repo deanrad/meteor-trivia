@@ -24,5 +24,8 @@ export const Game = ({ title, status }) => (
     <button onClick={() => dispatchAction(Actions.Round.advance()) }>
         Next Round
     </button>
+    <button onClick={() => dispatchAction(Actions.Round.narrow()) }>
+        Narrow Choices
+    </button>
   </div>
 )
