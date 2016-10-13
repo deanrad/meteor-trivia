@@ -24,7 +24,10 @@ export const Game = ({ title, status }) => (
     <button onClick={() => dispatchAction(Actions.Round.advance()) }>
         Next Round
     </button>
-    <button onClick={() => dispatchAction(Actions.Round.narrow()) }>
+    <button onClick={() => dispatchAction(Actions.Round.hintNarrow()) }>
+        Ask for hint: Narrow Choices
+    </button>
+    <button onClick={() => dispatchAction(Actions.Round.narrow(1)) }>
         Narrow Choices
     </button>
   </div>
