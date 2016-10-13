@@ -5,7 +5,7 @@ let state$ = new Rx.Subject
 
 store.subscribe(() => {
   let state = store.getState()
-  console.log('S>', state.toJS())
+  console.log('S>', JSON.stringify(state.toJS(), null, 2))
   state$.onNext(state)
 })
 

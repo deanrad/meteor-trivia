@@ -13,14 +13,40 @@ if (Meteor.isClient) {
   }
 }
 
-// EXPERIMENTAL - a raw Redux middleware which can dispatch new actions upon hearing
-// of
+// A 'Business Logic' Redux middleware which can dispatch new actions
 const hinter = ({ dispatch }) => (next) => (action) => {
+
+  // process the action normally
+  let result = next(action)
+
+  // dispatch any additional side effects, even if async..
   if (action.type === 'ROUND_HINT_NARROW') {
-    dispatch(Round.actions.narrow())
+    result = dispatch(Round.actions.narrow())
   }
 
-  return next(action)
+  // return whatever you want, usually the last result
+  return result
 }
 
-export default storeFactory(rootReducer, new Map(), applyMiddleware(thunk, hinter))
+// client and server include these middlewares,
+const middlewares = [thunk, hinter]
+
+const maybeAddServerMiddlewares = () => {
+  if (Meteor.isServer) {
+    // allow you to use redux-thunk or similar, and see 'expanded' stream of actions
+    import { pushNext } from '../server/streams/expandedActions'
+
+    const streamer = store => next => action => {
+      pushNext(action)
+      return next(action)
+    }
+
+    middlewares.push(streamer)
+  }
+}
+maybeAddServerMiddlewares()
+
+export default storeFactory(rootReducer,
+  new Map(),
+  applyMiddleware(...middlewares)
+)
