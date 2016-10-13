@@ -8,13 +8,24 @@ export const Game = ({ title, status }) => (
     <button onClick={() => dispatchAction(Actions.Game.begin()) }>
         Begin Game
     </button>
-    <button onClick={() => dispatchAction(Actions.Game.end()) }>
-        End Game
-    </button>
+
     <br/>
+
     <button onClick={() => dispatchAction(Actions.Round.begin()) }>
         Begin Round
     </button>
+
+    &nbsp;
+
+    <button onClick={() => dispatchAction(Actions.Round.hintNarrow()) }>
+        Ask for hint: Narrow Choices
+    </button>
+    <button onClick={() => dispatchAction(Actions.Round.narrow(1)) }>
+        Narrow Choices
+    </button>
+
+    &nbsp;
+
     <button onClick={() => dispatchAction(Actions.Round.judge('closed')) }>
         Close Round To Answers
     </button>
@@ -24,11 +35,12 @@ export const Game = ({ title, status }) => (
     <button onClick={() => dispatchAction(Actions.Round.advance()) }>
         Next Round
     </button>
-    <button onClick={() => dispatchAction(Actions.Round.hintNarrow()) }>
-        Ask for hint: Narrow Choices
+
+    <br/>
+
+    <button onClick={() => dispatchAction(Actions.Game.end()) }>
+        End Game
     </button>
-    <button onClick={() => dispatchAction(Actions.Round.narrow(1)) }>
-        Narrow Choices
-    </button>
+
   </div>
 )
