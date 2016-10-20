@@ -1,5 +1,5 @@
 import React from 'react'
-import { dispatchAction } from '../methods/client/dispatchAction'
+import { dispatchAction } from '../client/streams/clientActionsStream'
 import Actions from '../store/actions'
 
 export const Round = ({ question, outcome }) => {

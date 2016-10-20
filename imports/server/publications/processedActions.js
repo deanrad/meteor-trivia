@@ -26,6 +26,8 @@ Meteor.publish('processedActions', function() {
 
   // Subscription to changes - try inserting delay(1000) for latency!
   expandedActions
+    .filter(action => (action.meta.origin === 'server') ||
+                      (action.meta.connectionId !== client.connection.id))
     .subscribe(meteorize(action => {
       console.log(`PUB> sending upstream: (${client.connection.id})`, action.type)
       client.added('processedActions', new Mongo.ObjectID(), action)

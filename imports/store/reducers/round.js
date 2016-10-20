@@ -7,8 +7,8 @@ const judge = createAction('ROUND_JUDGE')
 const credit = createAction('ROUND_CREDIT')
 const advance = createAction('ROUND_ADVANCE')
 
-// the user creates asking for a hint
-const hintNarrow = createAction('ROUND_HINT_NARROW')
+// the user asks for a hint (but requires the server to confirm it)
+const hintNarrow = createAction('ROUND_HINT_NARROW', p => p, () => ({ optimistic: false }))
 const narrow = createAction('ROUND_NARROW')
 
 export const initialState = {

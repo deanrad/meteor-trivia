@@ -10,7 +10,12 @@ export const hinter = ({ dispatch, getState }) => (next) => (action) => {
     let choices = getState().getIn(['round', 'question', 'choices'])
 
     if (choices && choices.size > 2) {
-      setTimeout(() => { dispatch(Round.actions.narrow()) }, 750)
+      let narrowAction = Round.actions.narrow()
+
+      // preserve + extend the original action's metadata
+      narrowAction.meta = { ...action.meta, origin: 'server' }
+
+      setTimeout(() => { dispatch(narrowAction) }, 750)
     }
   }
 
