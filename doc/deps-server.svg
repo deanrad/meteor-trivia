@@ -16,7 +16,7 @@
 </g>
 <!-- server/methods/dispatchAction -->
 <g id="node2" class="node"><title>server/methods/dispatchAction</title>
-<ellipse fill="none" stroke="#000000" cx="139.607" cy="-234" rx="139.714" ry="18"/>
+<ellipse fill="#E8ECF5" stroke="#000000" cx="139.607" cy="-234" rx="139.714" ry="18"/>
 <text text-anchor="middle" x="139.607" y="-230.849" font-family="Arial" font-size="14.00" fill="#000000">server/methods/dispatchAction</text>
 </g>
 <!-- server/listeners/dispatchActionsToStore&#45;&gt;server/methods/dispatchAction -->

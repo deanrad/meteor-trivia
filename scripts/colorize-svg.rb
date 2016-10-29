@@ -5,12 +5,12 @@ svg = STDIN.read
 color = svg
 
 side_effect_nodes = [
-  'methods/client/dispatchAction',
+  'client/methods/dispatchAction',
   'server/publications/processedActions'
 ]
 
 source_nodes = [
-  'methods/server/dispatchAction',
+  'server/methods/dispatchAction',
   'client/subscribeProcessedActions'
 ]
 
