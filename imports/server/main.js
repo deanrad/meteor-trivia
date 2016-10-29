@@ -1,5 +1,5 @@
-import '../methods/server/dispatchAction'
+import './methods/dispatchAction'
 import './publications/processedActions'
-import '../server/listeners/dispatchActionsToStore'
+import './listeners/dispatchActionsToStore'
 
 // absolute paths dont appear on dependency graphs, these are just for startup

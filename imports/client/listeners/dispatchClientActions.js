@@ -1,6 +1,6 @@
 import clientActionsStream from '../streams/clientActionsStream'
 import store from '../../store/store'
-import { dispatchAction } from '../../methods/client/dispatchAction'
+import { dispatchAction } from '../methods/dispatchAction'
 
 // all but action.meta.optimistic === false or played locally
 // are dispatched optimistically first

@@ -1,78 +1,72 @@
 {
+   "server/methods/dispatchAction" : [],
+   "components/Game" : [
+      "client/streams/clientActionsStream",
+      "store/actions"
+   ],
+   "test/spec.test" : [],
+   "store/reducers/game" : [
+      "store/reducers/createStatefulImmutableReducer"
+   ],
+   "client/streams/clientActionsStream" : [],
+   "client/listeners/dispatchClientActions" : [
+      "client/methods/dispatchAction",
+      "client/streams/clientActionsStream",
+      "store"
+   ],
    "store/reducers/createStatefulImmutableReducer" : [],
+   "store" : [
+      "store/epics/round",
+      "store/reducers/root"
+   ],
+   "client/streams/serverActionsStream" : [],
+   "client/methods/dispatchAction" : [],
    "client/subscribeProcessedActions" : [
       "client/streams/serverActionsStream"
    ],
-   "client/streams/serverActionsStream" : [],
-   "client/listeners/dispatchServerActions" : [
-      "client/streams/serverActionsStream",
-      "store"
+   "components/TriviaApp" : [
+      "components/Game",
+      "components/Round"
+   ],
+   "store/reducers/round" : [],
+   "store/epics/round" : [
+      "store/reducers/round"
+   ],
+   "components/Round" : [
+      "client/streams/clientActionsStream",
+      "store/actions"
    ],
    "store/actions" : [
       "store/reducers/game",
       "store/reducers/root",
       "store/reducers/round"
    ],
-   "store" : [
-      "store/epics/round",
-      "store/reducers/root",
-      "server/streams/expandedActions"
-   ],
-   "test/spec.test" : [],
-   "server/main" : [
-      "methods/server/dispatchAction",
-      "server/listeners/dispatchActionsToStore",
-      "server/publications/processedActions"
-   ],
-   "store/reducers/round" : [],
-   "client/listeners/dispatchClientActions" : [
-      "client/streams/clientActionsStream",
-      "methods/client/dispatchAction",
-      "store"
-   ],
-   "client/streams/clientActionsStream" : [],
-   "components/TriviaApp" : [
-      "components/Game",
-      "components/Round"
-   ],
    "client/router" : [
       "components/TriviaApp",
       "store"
    ],
-   "server/streams/expandedActions" : [],
-   "components/Game" : [
-      "client/streams/clientActionsStream",
-      "store/actions"
+   "client/main" : [
+      "client/router",
+      "client/subscribeProcessedActions"
    ],
-   "store/reducers/game" : [
-      "store/reducers/createStatefulImmutableReducer"
-   ],
-   "server/streams/dispatchedActions" : [],
-   "components/Round" : [
-      "client/streams/clientActionsStream",
-      "store/actions"
-   ],
-   "server/publications/processedActions" : [
-      "server/streams/expandedActions",
+   "client/listeners/dispatchServerActions" : [
+      "client/streams/serverActionsStream",
       "store"
    ],
-   "store/epics/round" : [
-      "store/reducers/round"
+   "server/listeners/dispatchActionsToStore" : [
+      "server/methods/dispatchAction",
+      "store"
    ],
-   "methods/client/dispatchAction" : [],
+   "server/publications/processedActions" : [
+      "store"
+   ],
    "store/reducers/root" : [
       "store/reducers/game",
       "store/reducers/round"
    ],
-   "server/listeners/dispatchActionsToStore" : [
-      "server/streams/dispatchedActions",
-      "store"
-   ],
-   "methods/server/dispatchAction" : [
-      "server/streams/dispatchedActions"
-   ],
-   "client/main" : [
-      "client/router",
-      "client/subscribeProcessedActions"
+   "server/main" : [
+      "server/listeners/dispatchActionsToStore",
+      "server/methods/dispatchAction",
+      "server/publications/processedActions"
    ]
 }

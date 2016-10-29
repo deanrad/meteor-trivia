@@ -12,7 +12,7 @@
     "test:meteor:unit": "meteor test --once --driver-package dispatch:mocha-phantomjs",
     "test:load": "meteor-down tests/loadTest.js http://localhost:7730",
     "test": "npm run test:fast",
-    "doc:client": "madge -j -f es6 -x 'server/|test|uni-method|meteor|immutable|redux-act|react|collections' imports/ | ruby scripts/tweak-deps.rb -x server/ | madge --stdin -i doc/deps-client-orig.svg",
+    "doc:client": "madge -j -f es6 -x 'server/|test|uni-method|meteor|immutable|redux-act|react|collections|server/main' imports/ | ruby scripts/tweak-deps.rb -x server/ | madge --stdin -i doc/deps-client-orig.svg",
     "doc:server": "madge -j -f es6 -x 'client/|test|uni-method|meteor|immutable|redux-act|components' imports/ | ruby scripts/tweak-deps.rb -x client/ | madge --stdin -i doc/deps-server-orig.svg",
     "doc:save": "madge -j -f es6 imports/ | ruby scripts/tweak-deps.rb | json_pp > doc/deps.json",
     "doc:view": "open doc/deps-{client,server}.svg",

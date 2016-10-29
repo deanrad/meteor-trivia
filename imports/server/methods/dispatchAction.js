@@ -1,8 +1,11 @@
 import { UniMethod } from 'meteor/deanius:uni-method'
+import Rx from 'rx'
 
-import { dispatch } from '../../server/streams/dispatchedActions'
+let thisAction = new Rx.Subject()
 
-export const dispatchAction = UniMethod.define('dispatchAction', function (action) {
+export const dispatchedActions = thisAction.asObservable()
+
+UniMethod.define('dispatchAction', function (action) {
   let client = this
   console.log('  --------------  ')
   console.log(`M> (${client.connection.id}) {type: ${action.type}}`)
@@ -11,5 +14,6 @@ export const dispatchAction = UniMethod.define('dispatchAction', function (actio
     connectionId: client.connection.id
   }
 
-  return dispatch(action)
+  return thisAction.onNext(action)
 })
+

@@ -6,3 +6,4 @@ chai.use(chaiImmutable)
 
 td.replace('meteor/meteor', { Meteor: { isClient: false, isServer: true } })
 td.replace('meteor/underscore', _)
+td.replace('meteor/deanius:uni-method', { UniMethod: { define: () => {} } })

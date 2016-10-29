@@ -1,9 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
-import store from '../../store/store'
-import expandedActions from '../streams/expandedActions'
-
-const meteorize = Meteor.bindEnvironment
+import store, { processedActions } from '../../store/store'
 
 // Note - Mergebox will not publish events that are dupes of previous ones, thus the
 // inclusion of always-unique ObjectIDs on messages
@@ -25,11 +22,16 @@ Meteor.publish('processedActions', function() {
   client.ready()
 
   // Subscription to changes - try inserting delay(1000) for latency!
-  expandedActions
+  processedActions
     .filter(action => (action.meta.origin === 'server') ||
                       (action.meta.connectionId !== client.connection.id))
-    .subscribe(meteorize(action => {
+    .subscribe(action => {
       console.log(`PUB> sending upstream: (${client.connection.id})`, action.type)
-      client.added('processedActions', new Mongo.ObjectID(), action)
-    }))
+      try {
+        // the RandomID is to ensure mergebox passes multiple identical actions
+        client.added('processedActions', new Mongo.ObjectID(), action)
+      } catch (ex) {
+        console.log('Publish error:', ex)
+      }
+    })
 })
