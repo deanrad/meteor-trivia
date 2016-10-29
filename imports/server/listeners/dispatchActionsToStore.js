@@ -3,6 +3,6 @@ import { dispatchedActions } from '../methods/dispatchAction'
 
 dispatchedActions.subscribe(action => {
   // TODO exception handling, proper error propogation to client
-  console.log('dispatching to store')
+  console.log('dispatching to store', action)
   store.dispatch(action)
 })

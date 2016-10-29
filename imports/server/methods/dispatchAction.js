@@ -1,9 +1,7 @@
 import { UniMethod } from 'meteor/deanius:uni-method'
 import Rx from 'rx'
 
-let thisAction = new Rx.Subject()
-
-export const dispatchedActions = thisAction.asObservable()
+let thisAction = new Rx.Subject() // todo investigate ReplaySubject for store states
 
 UniMethod.define('dispatchAction', function (action) {
   let client = this
@@ -17,3 +15,5 @@ UniMethod.define('dispatchAction', function (action) {
   return thisAction.onNext(action)
 })
 
+// export a stream of dispatched actions
+export const dispatchedActions = thisAction.asObservable()
